@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Detalles - Promo 2: Paquete de Uñas</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Natur All</h1>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="spa.html">Spa</a></li>
+                <li><a href="salon.html">Salon</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+                <li><a href="promos.html">Promociones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="section-container">
+        <div class="content-box">
+            <h2>Promo 2: Paquete de Uñas</h2>
+            <p>¡Disfruta de nuestro paquete especial de uñas a solo $50!</p>
+            <p>Válido hasta el 15 de noviembre.</p>
+
+            <h3>Promociones Especiales de Uñas</h3>
+            <div class="nail-promotions-list">
+                <div class="nail-promo-item">
+                    <h4>Promo 1: Uñas Acrílicas</h4>
+                    <img src="images/unhas_acrilicas.jpg" alt="Uñas Acrílicas">
+                    <p>Obtén un 15% de descuento en tu primera aplicación de uñas acrílicas.</p>
+                </div>
+                <div class="nail-promo-item">
+                    <h4>Promo 2: Manicura y Pedicura</h4>
+                    <img src="images/manicura_pedicura.jpg" alt="Manicura y Pedicura">
+                    <p>Paquete de manicura y pedicura a solo $30.</p>
+                </div>
+                <div class="nail-promo-item">
+                    <h4>Promo 3: Uñas Gel</h4>
+                    <img src="images/unhas_gel.jpg" alt="Uñas Gel">
+                    <p>Recibe un 10% de descuento en uñas de gel durante todo el mes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Natur All. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
+        });
+
+        const links = document.querySelectorAll('nav a'); // Selecciona los enlaces del nav
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevenir el comportamiento predeterminado
+                const href = this.getAttribute('href');
+                document.body.classList.remove('show'); // Remueve la clase de visualización
+                setTimeout(() => {
+                    window.location.href = href; // Redirigir después de la animación
+                }, 500); // Tiempo de espera para que coincida con la duración de la animación
+            });
+        });
+    </script>
+</body>
+</html>

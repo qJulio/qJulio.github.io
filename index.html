@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Natur All</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Natur All</h1>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="promos.html">Promociones</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="section-container">
+        <div class="content-box">
+            <h2>Bienvenido a Natur All</h2>
+            <p>Descubre nuestros servicios de spa y salon.</p>
+            <div class="bubble-section">
+                <div class="bubble">
+                    <h3>Spa</h3>
+                    <p>Relájate y rejuvenece.</p>
+                    <a href="spa.html" class="cta-btn">Ver Spa</a>
+                </div>
+                <div class="bubble">
+                    <h3>Salon</h3>
+                    <p>Cuida tu estilo.</p>
+                    <a href="salon.html" class="cta-btn">Ver Salon</a>
+                </div>
+                <div class="bubble">
+                    <h3>Spa para Caballeros</h3>
+                    <p>Relájate y rejuvenece.</p>
+                    <a href="spa-caballeros.html" class="cta-btn">Ver Spa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Natur All. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
+        });
+
+        const links = document.querySelectorAll('nav a, .bubble a'); // Selecciona los enlaces de navegación y las burbujas
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevenir el comportamiento predeterminado
+                const href = this.getAttribute('href');
+                document.body.classList.remove('show'); // Remueve la clase de visualización
+                setTimeout(() => {
+                    window.location.href = href; // Redirigir después de la animación
+                }, 500); // Tiempo de espera para que coincida con la duración de la animación
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Promociones del Mes de Noviembre - Natur All</title>
+    <style>
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50; /* Color verde */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .back-button:hover {
+            background-color: #45a049; /* Color verde más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Natur All</h1>
+            <ul>
+                <li><a href="spa.html">Spa</a></li>
+                <li><a href="spa-caballeros.html">Spa para Caballeros</a></li>
+                <li><a href="salon.html">Salon</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+                <li><a href="promos.html">Promociones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <!-- Botón para volver a inicio -->
+        <a href="index.html" class="back-button">Volver a Inicio</a>
+
+    <div class="section-container">
+        <div class="content-box">
+            <h2>Promociones del Mes</h2>
+            <p>¡No te pierdas nuestras increíbles promociones!</p>
+            <div class="promotions-list">
+                <!-- Sección de Promociones sin descripción, solo imágenes -->
+                <div class="promotion-item">
+                    <img src="images/promo1.jpg" alt="Promoción 1">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo2.jpg" alt="Promoción 2">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo3.jpg" alt="Promoción 3">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo4.jpg" alt="Promoción 4">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo5.jpg" alt="Promoción 5">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo6.jpg" alt="Promoción 6">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo7.jpg" alt="Promoción 7">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo8.jpg" alt="Promoción 8">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo9.jpg" alt="Promoción 9">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo10.jpg" alt="Promoción 10">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo11.jpg" alt="Promoción 11">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo12.jpg" alt="Promoción 12">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo13.jpg" alt="Promoción 13">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo14.jpg" alt="Promoción 14">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo15.jpg" alt="Promoción 15">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Natur All. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
+        });
+
+        const links = document.querySelectorAll('nav a'); // Selecciona los enlaces del nav
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevenir el comportamiento predeterminado
+                const href = this.getAttribute('href');
+                document.body.classList.remove('show'); // Remueve la clase de visualización
+                setTimeout(() => {
+                    window.location.href = href; // Redirigir después de la animación
+                }, 500); // Tiempo de espera para que coincida con la duración de la animación
+            });
+        });
+    </script>
+</body>
+</html>
