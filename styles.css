@@ -70,7 +70,7 @@ nav ul li a:hover {
 .cta-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #d4af37; /* Color dorado */
+    background-color: #f5f5dc; /* Cambia a beige */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -78,7 +78,7 @@ nav ul li a:hover {
 }
 
 .cta-btn:hover {
-    background-color: #b5942e; /* Color dorado oscuro */
+    background-color: #e0e0c0; /* Cambia el color en hover, un beige más oscuro */
 }
 
 /* Estilos para las burbujas */
