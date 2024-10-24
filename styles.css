@@ -414,3 +414,17 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Estilo para los botones de llamada a la acción */
+.cta-btn {
+    background-color: #c5b59c; /* Color beige más oscuro */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s; /* Transición para el efecto hover */
+}
+
+.cta-btn:hover {
+    background-color: #a68b6b; /* Tono más oscuro al pasar el ratón */
+}
