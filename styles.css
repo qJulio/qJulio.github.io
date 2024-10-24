@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: 'Lato', sans-serif;
     background: url('images/Masaje-Facial-en-Terapias-de-relajacion-Medellin.png') no-repeat center center fixed; /* Cambia la ruta por la de tu imagen */
-    background-size: cover; /* Ajusta el tamaño para cubrir toda la pantalla */
+    background-size: cover; /* Ajusta el tamaÃ±o para cubrir toda la pantalla */
     color: #333; /* Color del texto */
 }
 
@@ -23,12 +23,12 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    flex-wrap: wrap; /* Asegúrate de que los elementos se ajusten en pantallas pequeñas */
+    flex-wrap: wrap; /* AsegÃºrate de que los elementos se ajusten en pantallas pequeÃ±as */
 }
 
 nav h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2em; /* Tamaño de fuente más grande */
+    font-size: 2em; /* TamaÃ±o de fuente mÃ¡s grande */
 }
 
 nav ul {
@@ -52,17 +52,17 @@ nav ul li a:hover {
     color: #d4af37; /* Color dorado en hover */
 }
 
-/* Sección container con fondo transparente */
+/* SecciÃ³n container con fondo transparente */
 .section-container {
     padding: 40px 0; /* Espacio superior e inferior */
     position: relative;
 }
 
-/* Marco elegante para cada sección */
+/* Marco elegante para cada secciÃ³n */
 .content-box {
     background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco con opacidad */
     border: 2px solid rgba(212, 175, 55, 0.6); /* Borde dorado con opacidad */
-    border-radius: 15px; /* Bordes más redondeados */
+    border-radius: 15px; /* Bordes mÃ¡s redondeados */
     padding: 30px; /* Espacio interno */
 }
 
@@ -70,7 +70,7 @@ nav ul li a:hover {
 .cta-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #f5f5dc; /* Cambia a beige */
+    background-color: #d4af37; /* Color dorado */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -78,7 +78,7 @@ nav ul li a:hover {
 }
 
 .cta-btn:hover {
-    background-color: #e0e0c0; /* Cambia el color en hover, un beige más oscuro */
+    background-color: #b5942e; /* Color dorado oscuro */
 }
 
 /* Estilos para las burbujas */
@@ -98,7 +98,7 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
-/* Estilos para el pie de página */
+/* Estilos para el pie de pÃ¡gina */
 footer {
     text-align: center;
     padding: 20px;
@@ -106,49 +106,49 @@ footer {
     color: #fff;
 }
 
-/* Efecto de transición para toda la página */
+/* Efecto de transiciÃ³n para toda la pÃ¡gina */
 html {
-    transition: opacity 0.5s ease-in-out; /* Transición de opacidad */
+    transition: opacity 0.5s ease-in-out; /* TransiciÃ³n de opacidad */
 }
 
 body {
     opacity: 0; /* Comienza oculto */
 }
 
-/* Cuando la página esté completamente cargada */
+/* Cuando la pÃ¡gina estÃ© completamente cargada */
 body.loaded {
-    opacity: 1; /* Mostrar la página */
+    opacity: 1; /* Mostrar la pÃ¡gina */
 }
 
-/* Media Queries para móviles */
+/* Media Queries para mÃ³viles */
 @media (max-width: 768px) {
     .bubble-section {
-        flex-direction: column; /* Colocar burbujas en columna en móvil */
+        flex-direction: column; /* Colocar burbujas en columna en mÃ³vil */
         align-items: center; /* Centrar burbujas */
     }
     
     .bubble {
-        width: 80%; /* Ancho flexible en móviles */
+        width: 80%; /* Ancho flexible en mÃ³viles */
         margin-bottom: 20px; /* Espacio entre burbujas */
     }
 }
-/* Animación de desvanecimiento */
+/* AnimaciÃ³n de desvanecimiento */
 .fade {
     opacity: 0; /* Comienza oculto */
-    transition: opacity 0.5s ease-in-out; /* Transición de opacidad */
+    transition: opacity 0.5s ease-in-out; /* TransiciÃ³n de opacidad */
 }
 
 .fade.show {
-    opacity: 1; /* Mostrar al final de la transición */
+    opacity: 1; /* Mostrar al final de la transiciÃ³n */
 }
-/* Sección container con fondo transparente */
+/* SecciÃ³n container con fondo transparente */
 .section-container {
     padding: 40px 0; /* Espacio superior e inferior */
     position: relative;
     background: transparent; /* Fondo completamente transparente */
 }
 
-/* Estilo para el contenido dentro de la sección */
+/* Estilo para el contenido dentro de la secciÃ³n */
 .content-box {
     background: rgba(255, 255, 255, 0.5); /* Fondo blanco con opacidad */
     border-radius: 15px; /* Bordes redondeados */
@@ -167,7 +167,7 @@ body.loaded {
     padding: 15px;
     margin: 10px;
     text-align: center;
-    width: calc(30% - 20px); /* Ajustar el tamaño según el diseño */
+    width: calc(30% - 20px); /* Ajustar el tamaÃ±o segÃºn el diseÃ±o */
     transition: transform 0.3s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
 }
@@ -193,7 +193,7 @@ body.loaded {
     padding: 15px;
     margin: 10px;
     text-align: center;
-    width: calc(30% - 20px); /* Ajustar el tamaño según el diseño */
+    width: calc(30% - 20px); /* Ajustar el tamaÃ±o segÃºn el diseÃ±o */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
@@ -211,10 +211,10 @@ body.loaded {
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
     border-radius: 10px; /* Bordes redondeados */
     padding: 20px;
-    margin: 10px 0; /* Márgenes verticales para separar cada cuadro */
+    margin: 10px 0; /* MÃ¡rgenes verticales para separar cada cuadro */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
-    transition: transform 0.3s; /* Animación al pasar el mouse */
+    transition: transform 0.3s; /* AnimaciÃ³n al pasar el mouse */
 }
 
 .treatment-item:hover {
@@ -223,7 +223,7 @@ body.loaded {
 
 .treatment-item img {
     width: 100%; /* Ajustar la imagen al contenedor */
-    height: auto; /* Mantener la proporción de la imagen */
+    height: auto; /* Mantener la proporciÃ³n de la imagen */
     border-radius: 10px; /* Bordes redondeados en todas partes */
 }
 .treatments-list {
@@ -236,12 +236,12 @@ body.loaded {
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
     border-radius: 10px; /* Bordes redondeados */
     padding: 20px;
-    margin: 10px 0; /* Márgenes verticales para separar cada cuadro */
+    margin: 10px 0; /* MÃ¡rgenes verticales para separar cada cuadro */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
-    transition: transform 0.3s; /* Animación al pasar el mouse */
-    width: 80%; /* Ancho más amplio */
-    max-width: 600px; /* Máximo ancho para evitar que se expanda demasiado */
+    transition: transform 0.3s; /* AnimaciÃ³n al pasar el mouse */
+    width: 80%; /* Ancho mÃ¡s amplio */
+    max-width: 600px; /* MÃ¡ximo ancho para evitar que se expanda demasiado */
     margin-left: auto; /* Centrar el cuadro */
     margin-right: auto; /* Centrar el cuadro */
 }
@@ -252,7 +252,7 @@ body.loaded {
 
 .treatment-item img {
     width: 100%; /* Ajustar la imagen al contenedor */
-    height: auto; /* Mantener la proporción de la imagen */
+    height: auto; /* Mantener la proporciÃ³n de la imagen */
     border-radius: 10px; /* Bordes redondeados en todas partes */
 }
 body {
@@ -305,23 +305,23 @@ nav ul li a {
 .promotions-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px; /* Espacio entre las imágenes */
+    gap: 15px; /* Espacio entre las imÃ¡genes */
 }
 
 .promotion-item {
-    overflow: hidden; /* Para recortar imágenes si es necesario */
+    overflow: hidden; /* Para recortar imÃ¡genes si es necesario */
     border-radius: 8px; /* Esquinas redondeadas */
 }
 
 .promotion-item img {
     width: 100%;
-    height: auto; /* Mantiene la relación de aspecto */
+    height: auto; /* Mantiene la relaciÃ³n de aspecto */
     display: block;
-    transition: transform 0.3s; /* Efecto al pasar el ratón */
+    transition: transform 0.3s; /* Efecto al pasar el ratÃ³n */
 }
 
 .promotion-item img:hover {
-    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratÃ³n */
 }
 
 footer {
@@ -383,26 +383,26 @@ nav ul li a {
 .promotions-list {
     display: flex;
     flex-direction: column; /* Se apilan verticalmente en computadoras */
-    gap: 15px; /* Espacio entre imágenes */
+    gap: 15px; /* Espacio entre imÃ¡genes */
     align-items: center; /* Centra los cuadros horizontalmente */
 }
 
 .promotion-item {
     width: 80%; /* Ajusta el ancho al 80% del contenedor para computadoras */
-    max-width: 500px; /* Establece un ancho máximo para que no sea demasiado grande */
-    overflow: hidden; /* Recorta imágenes si es necesario */
+    max-width: 500px; /* Establece un ancho mÃ¡ximo para que no sea demasiado grande */
+    overflow: hidden; /* Recorta imÃ¡genes si es necesario */
     border-radius: 8px; /* Esquinas redondeadas */
 }
 
 .promotion-item img {
     width: 100%;
-    height: auto; /* Mantiene la relación de aspecto */
+    height: auto; /* Mantiene la relaciÃ³n de aspecto */
     display: block;
-    transition: transform 0.3s; /* Efecto al pasar el ratón */
+    transition: transform 0.3s; /* Efecto al pasar el ratÃ³n */
 }
 
 .promotion-item img:hover {
-    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratÃ³n */
 }
 
 footer {
@@ -413,18 +413,4 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-}
-/* Estilo para los botones de llamada a la acción */
-.cta-btn {
-    background-color: #c5b59c; /* Color beige más oscuro */
-    color: #fff; /* Color del texto */
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    transition: background-color 0.3s; /* Transición para el efecto hover */
-}
-
-.cta-btn:hover {
-    background-color: #a68b6b; /* Tono más oscuro al pasar el ratón */
 }
