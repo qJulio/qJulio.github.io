@@ -66,5 +66,11 @@
             });
         });
     </script>
+    <script>
+    window.addEventListener('popstate', function(event) {
+        // Redirige a index.html al usar la flecha de retroceso
+        window.location.href = 'index.html';
+    });
+    </script>
 </body>
 </html>
