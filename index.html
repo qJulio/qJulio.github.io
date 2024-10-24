@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://naturallhn.com/css/main.css">
-    <!-- Icono del sitio web -->
     <link rel="shortcut icon" href="Natur All Logo.png" type="image/x-icon">
     <title>Natur All</title>
 </head>
@@ -65,12 +64,13 @@
                 }, 500); // Tiempo de espera para que coincida con la duración de la animación
             });
         });
-    </script>
-    <script>
-    window.addEventListener('popstate', function(event) {
-        // Redirige a index.html al usar la flecha de retroceso
-        window.location.href = 'index.html';
-    });
+
+        // Redirigir a index.html solo si se está en ciertas páginas al usar la flecha de retroceso
+        window.addEventListener('popstate', function(event) {
+            if (window.location.pathname === '/spa.html' || window.location.pathname === '/salon.html' || window.location.pathname === '/spa-caballeros.html') {
+                window.location.href = 'index.html'; // Redirige solo desde estas páginas
+            }
+        });
     </script>
 </body>
 </html>
