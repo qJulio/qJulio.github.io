@@ -13,14 +13,14 @@
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #ffac62; /* Color verde */
+            background-color: #ffac62; /* Color beige oscuro */
             border: none;
             border-radius: 5px;
             text-decoration: none;
             text-align: center;
         }
         .back-button:hover {
-            background-color: #ff9435; /* Color verde más oscuro al pasar el mouse */
+            background-color: #ff9435; /* Color más oscuro al pasar el mouse */
         }
     </style>
 </head>
@@ -29,7 +29,7 @@
         <nav>
             <h1>Natur All</h1>
             <ul>
-                <li><a href="salon.html">Salon</a></li>
+                <li><a href="salon.html">Salón</a></li>
                 <li><a href="contacto.html">Contáctanos</a></li>
                 <li><a href="spa-caballeros.html">Spa para Caballeros</a></li>
                 <li><a href="promos.html">Promociones</a></li>
@@ -133,6 +133,13 @@
                     window.location.href = href; // Redirigir después de la animación
                 }, 500); // Tiempo de espera para que coincida con la duración de la animación
             });
+        });
+
+        // Redirigir a index.html solo si se está en ciertas páginas al usar la flecha de retroceso
+        window.addEventListener('popstate', function(event) {
+            if (window.location.pathname === '/spa.html' || window.location.pathname === '/salon.html' || window.location.pathname === '/spa-caballeros.html') {
+                window.location.href = 'index.html'; // Redirige solo desde estas páginas
+            }
         });
     </script>
 </body>
