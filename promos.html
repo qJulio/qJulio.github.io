@@ -22,20 +22,28 @@
             background-color: #ff9435; /* Color más oscuro al pasar el mouse */
         }
 
-        /* Estilo de la notificación */
+        /* Estilo de la notificación que cubre toda la pantalla */
         .notification {
             position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ffac62; /* Color de fondo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 172, 98, 0.9); /* Color de fondo con opacidad */
             color: #fff; /* Color del texto */
-            padding: 20px;
-            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             z-index: 1000; /* Asegura que esté en la parte superior */
             display: none; /* Ocultar inicialmente */
         }
-        
+
+        .notification p {
+            font-size: 24px; /* Tamaño del texto */
+            margin: 10px 0;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -44,6 +52,16 @@
         @keyframes fadeOut {
             from { opacity: 1; }
             to { opacity: 0; }
+        }
+
+        button.close-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff9435; /* Color de botón */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -120,8 +138,8 @@
     </div>
 
     <div class="notification" id="couponNotification">
-        <p>¡Cupon de Descuento! Usa el código: <strong>NATUR10</strong></p>
-        <button id="closeButton">Cerrar</button>
+        <p>🎁 ¡Cupon de Descuento! Usa el código: <strong>NATUR10</strong></p>
+        <button class="close-button" id="closeButton">Cerrar</button>
     </div>
 
     <footer>
@@ -134,7 +152,7 @@
             
             // Mostrar la notificación
             const notification = document.getElementById("couponNotification");
-            notification.style.display = "block"; // Mostrar la notificación
+            notification.style.display = "flex"; // Mostrar la notificación
             notification.style.animation = "fadeIn 1s forwards"; // Aplicar animación de entrada
 
             // Cerrar la notificación
