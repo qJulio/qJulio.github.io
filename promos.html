@@ -49,19 +49,15 @@
             to { opacity: 1; }
         }
 
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-
         button.close-button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px; /* Aumentar tamaño del botón */
+            font-size: 18px; /* Aumentar tamaño del texto */
             background-color: #ff9435; /* Color de botón */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 20px; /* Separación del texto */
         }
     </style>
 <head>
@@ -166,10 +162,8 @@
             // Cerrar la notificación
             const closeButton = document.getElementById("closeButton");
             closeButton.addEventListener("click", function() {
-                notification.style.animation = "fadeOut 1s forwards"; // Aplicar animación de salida
-                setTimeout(() => {
-                    notification.style.display = "none"; // Ocultar después de la animación
-                }, 1000); // Espera la duración de la animación
+                notification.style.display = "none"; // Ocultar cuando se cierra
+            });
         });
     </script>
 </body>
