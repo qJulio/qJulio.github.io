@@ -12,14 +12,14 @@
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #ffac62; /* Color beige oscuro */
+            background-color: #ffac62;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             text-align: center;
         }
         .back-button:hover {
-            background-color: #ff9435; /* Color más oscuro al pasar el mouse */
+            background-color: #ff9435;
         }
     </style>
 </head>
@@ -37,60 +37,20 @@
         </nav>
     </header>
 
-        <!-- Botón para volver a inicio -->
-        <a href="index.html" class="back-button">Volver a Inicio</a>
+    <a href="index.html" class="back-button">Volver a Inicio</a>
 
     <div class="section-container">
         <div class="content-box">
             <h2>Promociones del Mes</h2>
             <p>¡No te pierdas nuestras increíbles promociones!</p>
             <div class="promotions-list">
-                <!-- Sección de Promociones sin descripción, solo imágenes -->
                 <div class="promotion-item">
                     <img src="images/promo1.jpg" alt="Promoción 1">
                 </div>
                 <div class="promotion-item">
                     <img src="images/promo2.jpg" alt="Promoción 2">
                 </div>
-                <div class="promotion-item">
-                    <img src="images/promo3.jpg" alt="Promoción 3">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo4.jpg" alt="Promoción 4">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo5.jpg" alt="Promoción 5">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo6.jpg" alt="Promoción 6">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo7.jpg" alt="Promoción 7">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo8.jpg" alt="Promoción 8">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo9.jpg" alt="Promoción 9">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo10.jpg" alt="Promoción 10">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo11.jpg" alt="Promoción 11">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo12.jpg" alt="Promoción 12">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo13.jpg" alt="Promoción 13">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo14.jpg" alt="Promoción 14">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo15.jpg" alt="Promoción 15">
-                </div>
+                <!-- Más promociones aquí -->
             </div>
         </div>
     </div>
@@ -101,19 +61,24 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
+            document.body.classList.add('fade', 'show');
         });
 
-        const links = document.querySelectorAll('nav a'); // Selecciona los enlaces del nav
+        const links = document.querySelectorAll('nav a');
         links.forEach(link => {
             link.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevenir el comportamiento predeterminado
+                event.preventDefault();
                 const href = this.getAttribute('href');
-                document.body.classList.remove('show'); // Remueve la clase de visualización
+                history.pushState({}, '', href);
+                document.body.classList.remove('show');
                 setTimeout(() => {
-                    window.location.href = href; // Redirigir después de la animación
-                }, 500); // Tiempo de espera para que coincida con la duración de la animación
+                    window.location.href = href;
+                }, 500);
             });
+        });
+
+        window.addEventListener('popstate', function(event) {
+            window.location.href = document.location;
         });
     </script>
 </body>
