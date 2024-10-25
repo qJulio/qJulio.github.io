@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <!-- Icono del sitio web -->
     <link rel="shortcut icon" href="images/Natur All Logo.png" type="image/x-icon">
     <title>Natur All</title>
 </head>
@@ -43,13 +42,32 @@
             </div>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2024 Natur All. Todos los derechos reservados.</p>
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
+            document.body.classList.add('fade', 'show');
         });
+
+        const links = document.querySelectorAll('nav a, .bubble a');
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
+                history.pushState({}, '', href); // Actualizar la URL en el historial
+                document.body.classList.remove('show');
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500);
+            });
+        });
+
+        window.addEventListener('popstate', function(event) {
+            window.location.href = document.location; // Manejar la navegación con las flechas
+        });
+    </script>
 </body>
 </html>
