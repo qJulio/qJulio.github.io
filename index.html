@@ -51,18 +51,5 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
         });
-
-        const links = document.querySelectorAll('nav a, .bubble a'); // Selecciona los enlaces de navegación y las burbujas
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevenir el comportamiento predeterminado
-                const href = this.getAttribute('href');
-                document.body.classList.remove('show'); // Remueve la clase de visualización
-                setTimeout(() => {
-                    window.location.href = href; // Redirigir después de la animación
-                }, 500); // Tiempo de espera para que coincida con la duración de la animación
-            });
-        });
-    </script>
 </body>
 </html>
