@@ -52,17 +52,7 @@
             document.body.classList.add('fade', 'show');
         });
 
-        const links = document.querySelectorAll('nav a, .bubble a');
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const href = this.getAttribute('href');
-                document.body.classList.remove('show');
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500);
-            });
-        });
+        // Eliminado el manejo manual de la navegación de enlaces
     </script>
 </body>
 </html>
