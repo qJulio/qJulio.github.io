@@ -69,16 +69,11 @@
             link.addEventListener('click', function(event) {
                 event.preventDefault();
                 const href = this.getAttribute('href');
-                history.pushState({}, '', href);
                 document.body.classList.remove('show');
                 setTimeout(() => {
                     window.location.href = href;
                 }, 500);
             });
-        });
-
-        window.addEventListener('popstate', function(event) {
-            window.location.href = document.location;
         });
     </script>
 </body>
