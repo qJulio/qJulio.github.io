@@ -64,6 +64,14 @@
             cursor: pointer;
         }
     </style>
+<head>
+    <style>
+        /* Estilo para el enlace del título */
+        h1 a {
+            color: inherit; /* Hereda el color del texto del título */
+            text-decoration: none; /* Elimina el subrayado */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -162,15 +170,6 @@
                 setTimeout(() => {
                     notification.style.display = "none"; // Ocultar después de la animación
                 }, 1000); // Espera la duración de la animación
-            });
-
-            // Cerrar automáticamente después de 20 segundos
-            setTimeout(() => {
-                notification.style.animation = "fadeOut 1s forwards"; // Aplicar animación de salida
-                setTimeout(() => {
-                    notification.style.display = "none"; // Ocultar después de la animación
-                }, 1000); // Espera la duración de la animación
-            }, 20000); // 20 segundos
         });
     </script>
 </body>
