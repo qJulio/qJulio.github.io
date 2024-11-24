@@ -79,8 +79,13 @@ h1, h2, h3 {
 
 /* Adaptabilidad */
 @media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
     .treatment-item {
         font-size: 0.9rem;
+        padding: 10px;
     }
 
     .button {
