@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,6 +45,11 @@
             margin: 10px 0;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         button.close-button {
             padding: 15px 30px; /* Aumentar tamaño del botón */
             font-size: 18px; /* Aumentar tamaño del texto */
@@ -53,6 +59,14 @@
             border-radius: 5px;
             cursor: pointer;
             margin-top: 20px; /* Separación del texto */
+        }
+    </style>
+<head>
+    <style>
+        /* Estilo para el enlace del título */
+        h1 a {
+            color: inherit; /* Hereda el color del texto del título */
+            text-decoration: none; /* Elimina el subrayado */
         }
     </style>
 </head>
@@ -78,65 +92,80 @@
             <h2>Promociones del Mes</h2>
             <p>¡No te pierdas nuestras increíbles promociones!</p>
             <div class="promotions-list">
-                <!-- Sección de Promociones -->
+                <!-- Sección de Promociones sin descripción, solo imágenes -->
                 <div class="promotion-item">
-                    <img src="images/promo1.jpg" alt="Promoción 1" class="lazyload" loading="lazy">
+                    <img src="images/promo1.jpg" alt="Promoción 1">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo2.jpg" alt="Promoción 2" class="lazyload" loading="lazy">
+                    <img src="images/promo2.jpg" alt="Promoción 2">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo3.jpg" alt="Promoción 3" class="lazyload" loading="lazy">
+                    <img src="images/promo3.jpg" alt="Promoción 3">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo4.jpg" alt="Promoción 4" class="lazyload" loading="lazy">
+                    <img src="images/promo4.jpg" alt="Promoción 4">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo5.jpg" alt="Promoción 5" class="lazyload" loading="lazy">
+                    <img src="images/promo5.jpg" alt="Promoción 5">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo6.jpg" alt="Promoción 6" class="lazyload" loading="lazy">
+                    <img src="images/promo6.jpg" alt="Promoción 6">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo7.jpg" alt="Promoción 7" class="lazyload" loading="lazy">
+                    <img src="images/promo7.jpg" alt="Promoción 7">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo8.jpg" alt="Promoción 8" class="lazyload" loading="lazy">
+                    <img src="images/promo8.jpg" alt="Promoción 8">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo9.jpg" alt="Promoción 9" class="lazyload" loading="lazy">
+                    <img src="images/promo9.jpg" alt="Promoción 9">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo10.jpg" alt="Promoción 10" class="lazyload" loading="lazy">
+                    <img src="images/promo10.jpg" alt="Promoción 10">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo11.jpg" alt="Promoción 11" class="lazyload" loading="lazy">
+                    <img src="images/promo11.jpg" alt="Promoción 11">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo12.jpg" alt="Promoción 12" class="lazyload" loading="lazy">
+                    <img src="images/promo12.jpg" alt="Promoción 12">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo13.jpg" alt="Promoción 13" class="lazyload" loading="lazy">
+                    <img src="images/promo13.jpg" alt="Promoción 13">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo14.jpg" alt="Promoción 14">
+                </div>
+                <div class="promotion-item">
+                    <img src="images/promo15.jpg" alt="Promoción 15">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Notificación de promociones -->
-    <div class="notification" id="promotionNotification">
-        <p>¡No te pierdas nuestras increíbles promociones!</p>
-        <button class="close-button" onclick="closeNotification()">Cerrar</button>
+    <div class="notification" id="couponNotification">
+        <p>🎁 ¡Cupon de Descuento! Usa el código: <strong>NATUR10</strong></p>
+        <button class="close-button" id="closeButton">Cerrar</button>
     </div>
 
-    <script>
-        function closeNotification() {
-            document.getElementById('promotionNotification').style.display = 'none';
-        }
+    <footer>
+        <p>&copy; 2024 Natur All. Todos los derechos reservados.</p>
+    </footer>
 
-        // Mostrar la notificación después de 2 segundos
-        setTimeout(function() {
-            document.getElementById('promotionNotification').style.display = 'flex';
-        }, 2000);
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
+            
+            // Mostrar la notificación
+            const notification = document.getElementById("couponNotification");
+            notification.style.display = "flex"; // Mostrar la notificación
+            notification.style.animation = "fadeIn 1s forwards"; // Aplicar animación de entrada
+
+            // Cerrar la notificación
+            const closeButton = document.getElementById("closeButton");
+            closeButton.addEventListener("click", function() {
+                notification.style.display = "none"; // Ocultar cuando se cierra
+            });
+        });
     </script>
 </body>
 </html>
