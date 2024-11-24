@@ -60,14 +60,6 @@
             margin-top: 20px; /* Separación del texto */
         }
     </style>
-<head>
-    <style>
-        /* Estilo para el enlace del título */
-        h1 a {
-            color: inherit; /* Hereda el color del texto del título */
-            text-decoration: none; /* Elimina el subrayado */
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -91,80 +83,65 @@
             <h2>Promociones del Mes</h2>
             <p>¡No te pierdas nuestras increíbles promociones!</p>
             <div class="promotions-list">
-                <!-- Sección de Promociones sin descripción, solo imágenes -->
+                <!-- Sección de Promociones con Lazy Loading y srcset para mejor rendimiento -->
                 <div class="promotion-item">
-                    <img src="images/promo1.png" alt="Promoción 1">
+                    <img src="images/promo1-lowres.jpg" data-src="images/promo1.jpg" alt="Promoción 1" class="lazyload" loading="lazy" srcset="images/promo1-small.jpg 600w, images/promo1-medium.jpg 1200w, images/promo1-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo2.png" alt="Promoción 2">
+                    <img src="images/promo2-lowres.jpg" data-src="images/promo2.jpg" alt="Promoción 2" class="lazyload" loading="lazy" srcset="images/promo2-small.jpg 600w, images/promo2-medium.jpg 1200w, images/promo2-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo3.png" alt="Promoción 3">
+                    <img src="images/promo3-lowres.jpg" data-src="images/promo3.jpg" alt="Promoción 3" class="lazyload" loading="lazy" srcset="images/promo3-small.jpg 600w, images/promo3-medium.jpg 1200w, images/promo3-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo4.png" alt="Promoción 4">
+                    <img src="images/promo4-lowres.jpg" data-src="images/promo4.jpg" alt="Promoción 4" class="lazyload" loading="lazy" srcset="images/promo4-small.jpg 600w, images/promo4-medium.jpg 1200w, images/promo4-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo5.png" alt="Promoción 5">
+                    <img src="images/promo5-lowres.jpg" data-src="images/promo5.jpg" alt="Promoción 5" class="lazyload" loading="lazy" srcset="images/promo5-small.jpg 600w, images/promo5-medium.jpg 1200w, images/promo5-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo6.png" alt="Promoción 6">
+                    <img src="images/promo6-lowres.jpg" data-src="images/promo6.jpg" alt="Promoción 6" class="lazyload" loading="lazy" srcset="images/promo6-small.jpg 600w, images/promo6-medium.jpg 1200w, images/promo6-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo7.png" alt="Promoción 7">
+                    <img src="images/promo7-lowres.jpg" data-src="images/promo7.jpg" alt="Promoción 7" class="lazyload" loading="lazy" srcset="images/promo7-small.jpg 600w, images/promo7-medium.jpg 1200w, images/promo7-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo8.png" alt="Promoción 8">
+                    <img src="images/promo8-lowres.jpg" data-src="images/promo8.jpg" alt="Promoción 8" class="lazyload" loading="lazy" srcset="images/promo8-small.jpg 600w, images/promo8-medium.jpg 1200w, images/promo8-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo9.png" alt="Promoción 9">
+                    <img src="images/promo9-lowres.jpg" data-src="images/promo9.jpg" alt="Promoción 9" class="lazyload" loading="lazy" srcset="images/promo9-small.jpg 600w, images/promo9-medium.jpg 1200w, images/promo9-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo10.png" alt="Promoción 10">
+                    <img src="images/promo10-lowres.jpg" data-src="images/promo10.jpg" alt="Promoción 10" class="lazyload" loading="lazy" srcset="images/promo10-small.jpg 600w, images/promo10-medium.jpg 1200w, images/promo10-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo11.png" alt="Promoción 11">
+                    <img src="images/promo11-lowres.jpg" data-src="images/promo11.jpg" alt="Promoción 11" class="lazyload" loading="lazy" srcset="images/promo11-small.jpg 600w, images/promo11-medium.jpg 1200w, images/promo11-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo12.png" alt="Promoción 12">
+                    <img src="images/promo12-lowres.jpg" data-src="images/promo12.jpg" alt="Promoción 12" class="lazyload" loading="lazy" srcset="images/promo12-small.jpg 600w, images/promo12-medium.jpg 1200w, images/promo12-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
                 <div class="promotion-item">
-                    <img src="images/promo13.png" alt="Promoción 13">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo14.png" alt="Promoción 14">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo15.png" alt="Promoción 15">
+                    <img src="images/promo13-lowres.jpg" data-src="images/promo13.jpg" alt="Promoción 13" class="lazyload" loading="lazy" srcset="images/promo13-small.jpg 600w, images/promo13-medium.jpg 1200w, images/promo13-large.jpg 1800w" sizes="(max-width: 600px) 100vw, 50vw">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="notification" id="couponNotification">
-        <p>🎁 ¡Cupon de Descuento! Usa el código: <strong>NATUR10</strong></p>
-        <button class="close-button" id="closeButton">Cerrar</button>
+    <!-- Notificación de promociones -->
+    <div class="notification" id="promotionNotification">
+        <p>¡No te pierdas nuestras increíbles promociones!</p>
+        <button class="close-button" onclick="closeNotification()">Cerrar</button>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Natur All. Todos los derechos reservados.</p>
-    </footer>
-
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
-            
-            // Mostrar la notificación
-            const notification = document.getElementById("couponNotification");
-            notification.style.display = "flex"; // Mostrar la notificación
-            notification.style.animation = "fadeIn 1s forwards"; // Aplicar animación de entrada
+        function closeNotification() {
+            document.getElementById('promotionNotification').style.display = 'none';
+        }
 
-            // Cerrar la notificación
-            const closeButton = document.getElementById("closeButton");
-            closeButton.addEventListener("click", function() {
-                notification.style.display = "none"; // Ocultar cuando se cierra
-            });
-        });
+        // Mostrar la notificación después de 2 segundos
+        setTimeout(function() {
+            document.getElementById('promotionNotification').style.display = 'flex';
+        }, 2000);
     </script>
 </body>
 </html>
