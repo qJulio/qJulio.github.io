@@ -1,170 +1,48 @@
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Promociones del Mes de Noviembre - Natur All</title>
-    <style>
-        .back-button {
-            display: inline-block;
-            margin: 20px 0;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #ffac62; /* Color beige oscuro */
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .back-button:hover {
-            background-color: #ff9435; /* Color más oscuro al pasar el mouse */
-        }
-
-        /* Estilo de la notificación que cubre toda la pantalla */
-        .notification {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 172, 98, 0.9); /* Color de fondo con opacidad */
-            color: #fff; /* Color del texto */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 1000; /* Asegura que esté en la parte superior */
-            display: none; /* Ocultar inicialmente */
-        }
-
-        .notification p {
-            font-size: 24px; /* Tamaño del texto */
-            margin: 10px 0;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        button.close-button {
-            padding: 15px 30px; /* Aumentar tamaño del botón */
-            font-size: 18px; /* Aumentar tamaño del texto */
-            background-color: #ff9435; /* Color de botón */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px; /* Separación del texto */
-        }
-    </style>
-<head>
-    <style>
-        /* Estilo para el enlace del título */
-        h1 a {
-            color: inherit; /* Hereda el color del texto del título */
-            text-decoration: none; /* Elimina el subrayado */
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <h1><a href="index.html">Natur All</a></h1>
-            <ul>
-                <li><a href="spa.html">Spa</a></li>
-                <li><a href="spa-caballeros.html">Spa para Caballeros</a></li>
-                <li><a href="salon.html">Salón</a></li>
-                <li><a href="contacto.html">Contáctanos</a></li>
-                <li><a href="promos.html">Promociones</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Botón para volver a inicio -->
-    <a href="index.html" class="back-button">Volver a Inicio</a>
-
-    <div class="section-container">
-        <div class="content-box">
-            <h2>Promociones del Mes</h2>
-            <p>¡No te pierdas nuestras increíbles promociones!</p>
-            <div class="promotions-list">
-                <!-- Sección de Promociones sin descripción, solo imágenes -->
-                    <img src="images/promo1.png" alt="Promoción 1" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo2.png" alt="Promoción 2" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo3.png" alt="Promoción 3" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <im src="images/promo4.png" alt="Promoción 4" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo5.png" alt="Promoción 5" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo6.png" alt="Promoción 6" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo7.png" alt="Promoción 7" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo8.png" alt="Promoción 8" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo9.png" alt="Promoción 9" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo10.png" alt="Promoción 10" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo11.png" alt="Promoción 11" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo12.png" alt="Promoción 12" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo13.png" alt="Promoción 13" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo14.png" alt="Promoción 14" loading="lazy">
-                </div>
-                <div class="promotion-item">
-                    <img src="images/promo15.png" alt="Promoción 15" loading="lazy">
-                </div>
-            </div>
-        </div>
+<div class="promotions-list">
+    <!-- Sección de Promociones sin descripción, solo imágenes -->
+    <div class="promotion-item">
+        <img src="images/promo1.png" alt="Promoción 1" loading="lazy">
+    </div> <!-- Cierre de div faltante para la primera imagen -->
+    <div class="promotion-item">
+        <img src="images/promo2.png" alt="Promoción 2" loading="lazy">
     </div>
-
-    <div class="notification" id="couponNotification">
-        <p>🎁 ¡Cupon de Descuento! Usa el código: <strong>NATUR10</strong></p>
-        <button class="close-button" id="closeButton">Cerrar</button>
+    <div class="promotion-item">
+        <img src="images/promo3.png" alt="Promoción 3" loading="lazy">
     </div>
-
-    <footer>
-        <p>&copy; 2024 Natur All. Todos los derechos reservados.</p>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
-            
-            // Mostrar la notificación
-            const notification = document.getElementById("couponNotification");
-            notification.style.display = "flex"; // Mostrar la notificación
-            notification.style.animation = "fadeIn 1s forwards"; // Aplicar animación de entrada
-
-            // Cerrar la notificación
-            const closeButton = document.getElementById("closeButton");
-            closeButton.addEventListener("click", function() {
-                notification.style.display = "none"; // Ocultar cuando se cierra
-            });
-        });
-    </script>
-</body>
-</html>
+    <div class="promotion-item">
+        <img src="images/promo4.png" alt="Promoción 4" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo5.png" alt="Promoción 5" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo6.png" alt="Promoción 6" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo7.png" alt="Promoción 7" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo8.png" alt="Promoción 8" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo9.png" alt="Promoción 9" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo10.png" alt="Promoción 10" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo11.png" alt="Promoción 11" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo12.png" alt="Promoción 12" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo13.png" alt="Promoción 13" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo14.png" alt="Promoción 14" loading="lazy">
+    </div>
+    <div class="promotion-item">
+        <img src="images/promo15.png" alt="Promoción 15" loading="lazy">
+    </div>
+</div>
