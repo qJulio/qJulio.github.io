@@ -3,38 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Salon - Natur All</title>
+    <title>Salón - Natur All</title>
     <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
+            background:
+                linear-gradient(rgba(43, 57, 84, 0.36), rgba(52, 125, 84, 0.19)),
+                url('https://media.istockphoto.com/id/952772504/photo/beautician-doing-permanent-eyebrows-makeup-tattoo-on-woman-face.jpg?s=612x612&w=0&k=20&c=vwYLinl1KoO0r-IpSnCPPo-zLf78FXguNGSYaK7JYvk=') no-repeat center center fixed;
+            /* Imagen de fondo de pestañas/salón, puedes cambiar el link a una de pestañas en salón si tienes una mejor */
+            background-size: cover;
+        }
+        header {
+            background: rgba(57, 125, 84, 0.92);
+            color: #fff;
+            padding: 32px 0 15px 0;
+            text-align: center;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 4px 24px #2b5a3b6e;
+        }
+        header h1 { margin: 0 0 8px 0; font-size: 2.2em; letter-spacing: 2px;}
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.07em;
+            transition: color .14s;
+            padding: 2px 5px;
+        }
+        nav ul li a:hover {
+            color: #ffac62;
+        }
         .back-button {
             display: inline-block;
-            margin: 20px 0;
-            padding: 10px 20px;
+            margin: 22px 0 12px 0;
+            padding: 10px 24px;
             font-size: 16px;
             color: #fff;
-            background-color: #ffac62; /* Color beige oscuro */
+            background-color: #397d54;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             text-align: center;
+            transition: background-color .18s;
         }
         .back-button:hover {
-            background-color: #ff9435; /* Color más oscuro al pasar el mouse */
+            background-color: #285c3e;
+        }
+        .section-container {
+            max-width: 1150px;
+            margin: 32px auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 18px;
+            padding: 24px 18px 30px 18px;
+            box-shadow: 0 8px 32px #b9e7bd7c;
+        }
+        h2 {
+            color: #397d54;
+            border-bottom: 1.5px solid #d3eed4;
+            padding-bottom: 4px;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        h3 {
+            color: #295c3e;
+            margin-top: 38px;
+            font-size: 1.13em;
+        }
+        .treatments-list, .nail-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 22px 13px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .treatment-item {
+            background: #f8fcfa;
+            border: 1.5px solid #e3ece6;
+            border-radius: 12px;
+            padding: 14px 10px 12px 10px;
+            box-shadow: 0 2px 10px #d3eed4a1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform .12s, box-shadow .12s;
+            min-height: 230px;
+        }
+        .treatment-item:hover {
+            transform: translateY(-4px) scale(1.025);
+            box-shadow: 0 8px 28px #b9e7bdc0;
+            border-color: #b9e7bd;
+        }
+        .treatment-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 7px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px #c8e2cc81;
+        }
+        .treatment-item h4 {
+            font-size: 1.04em;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #295c3e;
+            text-align: center;
+        }
+        .treatment-item p {
+            font-size: .96em;
+            color: #444;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .contact-section { margin-top: 40px; }
+        .contact-info p {
+            margin: 7px 0;
+            font-size: 1.03em;
+        }
+        .contact-links a { color: #397d54; text-decoration: underline; }
+        .contact-social {
+            margin-top: 8px;
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+        .contact-social a {
+            display: inline-flex;
+            align-items: center;
+            color: #397d54;
+            font-size: 1.13em;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .contact-social a:hover {
+            color: #ffac62;
+        }
+        .contact-social span {
+            font-size: 1.6em;
+            margin-right: 7px;
+        }
+        .map {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px #a2c8a7;
+        }
+        @media (max-width: 768px) {
+            header {padding: 18px 0 10px 0;}
+            header h1 {font-size: 1.4em;}
+            nav ul {gap: 10px;}
+            .section-container {padding: 7px 2vw 18px 2vw;}
+            h2 {font-size: 1.1em;}
+            .treatments-list, .nail-options {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 11px 7px;
+            }
+            .treatment-item {min-height: 160px; padding: 8px 3px 9px 3px;}
+            .treatment-item img {width: 58px; height: 58px;}
+            .back-button {padding: 8px 12px; font-size: 14px;}
         }
     </style>
-<head>
-    <style>
-        /* Estilo para el enlace del título */
-        h1 a {
-            color: inherit; /* Hereda el color del texto del título */
-            text-decoration: none; /* Elimina el subrayado */
+    <script>
+    // Traducción automática según idioma del navegador
+    document.addEventListener("DOMContentLoaded", function() {
+        var lang = navigator.language || navigator.userLanguage;
+        if(lang && lang.startsWith('en')) {
+            // Header y nav
+            document.documentElement.lang = "en";
+            document.title = "Salon - Natur All";
+            document.querySelector("header h1").textContent = "Natur All Salon";
+            document.querySelector("header p")?.remove();
+            // Nav traducción
+            var navLinks = document.querySelectorAll("nav ul li a");
+            navLinks[0].textContent = "Spa";
+            navLinks[1].textContent = "Gentlemen's Spa";
+            navLinks[2].textContent = "Contact Us";
+            navLinks[3].textContent = "Promotions";
+            // Botón inicio
+            document.querySelector(".back-button").textContent = "Back to Home";
+            // Secciones
+            document.querySelector("h2").textContent = "Salon Treatments";
+            document.querySelectorAll("h3")[0].textContent = "Hair";
+            document.querySelectorAll("h3")[1].textContent = "Hands & Feet Treatments";
+            document.querySelector('.section-container h4[style]').textContent = "Acrylic Nails";
+            // Cabello
+            var hair = [
+                ["Stem Cells", "An innovative treatment that rejuvenates and revitalizes hair."],
+                ["Babylights", "Subtle coloring technique that mimics natural highlights."],
+                ["Balayage", "Hand-painted technique for a natural, luminous finish."],
+                ["Highlights", "Add dimension and light to your hair with personalized highlights."],
+                ["Color", "Vibrant colors for a complete makeover."],
+                ["Keratin", "Straightening treatment that controls frizz."],
+                ["Nanotherapy", "Deep hair repair using nanomolecules."]
+            ];
+            // Manos y pies
+            var handsFeet = [
+                ["Spa Manicure", "A relaxing treatment including exfoliation and hydration."],
+                ["Spa Pedicure", "Pamper your feet with a revitalizing, exfoliating treatment."],
+                ["Gel Polish", "Long-lasting, shiny finish for your nails."],
+                ["Regular Polish", "Choose your favorite color for a classic look."],
+                ["Standard Manicure", "Basic service to keep your nails in shape."],
+                ["Standard Pedicure", "Essential care for your feet."],
+                ["Pedicure + Paraffin", "Deep hydration with a paraffin treatment."],
+                ["Semi-Permanent Polish", "Long-lasting finish that stays flawless for weeks."]
+            ];
+            // Uñas acrílicas
+            var acrylic = [
+                ["Natural & French", "Classic style with an elegant touch."],
+                ["Cover (White, Pink or Sand)", "Even finish that adapts to your style."],
+                ["Dry Manicure", "Perfect manicure technique without water."],
+                ["Cuccio Calcium", "Strengthening nails with calcium for a healthy look."],
+                ["Aurora Effect", "Iridescent finish that captures the light."],
+                ["Mirror Effect", "Intense shine that reflects light like a mirror."],
+                ["Cat Eye Effect", "Unique design that creates depth."]
+            ];
+            // Rostro
+            var face = [
+                ["Pro Makeup with Lashes", "A glamorous look with lashes to enhance your gaze."],
+                ["Classic Lashes", "Traditional style for a natural effect."],
+                ["Hybrid Lashes", "Combination of classic and volume lashes."],
+                ["Volume Lashes", "A dramatic, full look for your lashes."],
+                ["Lash Lifting", "Lifts and curls your lashes for a more open look."],
+                ["Brow Lamination", "Controls and shapes your brows for a perfect look."],
+                ["Microblading", "Defines and shapes your brows with a natural finish."]
+            ];
+            // Cambiar textos dinámicamente
+            var items = document.querySelectorAll(".treatments-list")[0].children;
+            for(let i=0; i<hair.length; i++) {
+                items[i].querySelector("h4").textContent = hair[i][0];
+                items[i].querySelector("p").textContent = hair[i][1];
+            }
+            items = document.querySelectorAll(".treatments-list")[1].children;
+            for(let i=0; i<handsFeet.length; i++) {
+                items[i].querySelector("h4").textContent = handsFeet[i][0];
+                items[i].querySelector("p").textContent = handsFeet[i][1];
+            }
+            items = document.querySelectorAll(".nail-options")[0].children;
+            for(let i=0; i<acrylic.length; i++) {
+                items[i].querySelector("h4").textContent = acrylic[i][0];
+                items[i].querySelector("p").textContent = acrylic[i][1];
+            }
+            items = document.querySelectorAll(".treatments-list")[2].children;
+            for(let i=0; i<face.length; i++) {
+                items[i].querySelector("h4").textContent = face[i][0];
+                items[i].querySelector("p").textContent = face[i][1];
+            }
+            // Contacto
+            document.querySelector('.contact-section h2').textContent = "Contact & Bookings";
+            let contact = document.querySelectorAll('.contact-info p');
+            contact[0].innerHTML = "<strong>Phone:</strong> <a href=\"tel:+50487647340\" class=\"contact-links\">+504 8764-7340</a>";
+            contact[1].innerHTML = "<strong>WhatsApp:</strong> <a href=\"https://wa.me/50487647340?text=Good%20afternoon%2C%20I%20am%20interested%20in%20your%20salon%20services.%20I%20would%20like%20to%20request%20more%20information%2C%20please.\" class=\"contact-links\" target=\"_blank\">Message us on WhatsApp</a>";
+            contact[2].innerHTML = "<strong>Instagram:</strong> <a href=\"https://www.instagram.com/natur_all83/\" class=\"contact-links\" target=\"_blank\">@naturallhn</a>";
+            contact[3].innerHTML = "<strong>Address:</strong> La Placita Building, Tegucigalpa, Honduras";
+            contact[4].innerHTML = "<strong>Hours:</strong> Monday to Saturday, 8:00 AM – 6:00 PM";
+            contact[5].innerHTML = "<strong>Google Maps:</strong> <a href=\"https://maps.app.goo.gl/HUDmgae4HPJv7r268\" class=\"contact-links\" target=\"_blank\">View location</a>";
+            document.querySelector('.map h2').textContent = "Our Location";
+            document.querySelector('footer p').textContent = "© 2025 Natur All. All rights reserved.";
         }
-    </style>
+    });
+    </script>
 </head>
 <body>
     <header>
         <nav>
-        <h1><a href="index.html">Natur All</a></h1>
+            <h1>Natur All Salon</h1>
             <ul>
                 <li><a href="spa.html">Spa</a></li>
                 <li><a href="spa-caballeros.html">Spa para Caballeros</a></li>
@@ -44,12 +289,11 @@
         </nav>
     </header>
 
-        <!-- Botón para volver a inicio -->
-        <a href="index.html" class="back-button">Volver a Inicio</a>
+    <a href="index.html" class="back-button">Volver a Inicio</a>
 
     <div class="section-container">
         <div class="content-box">
-            <h2>Tratamientos de Salon</h2>
+            <h2>Tratamientos de Salón</h2>
             
             <!-- Sección de Cabello -->
             <section>
@@ -123,7 +367,7 @@
                         <p>Un servicio básico para mantener tus uñas en forma.</p>
                     </div>
                     <div class="treatment-item">
-                        <img src="images/pedicure normal.jpg"Pedicure Normal">
+                        <img src="images/pedicure normal.jpg" alt="Pedicure Normal">
                         <h4>Pedicure Normal</h4>
                         <p>Un cuidado esencial para tus pies.</p>
                     </div>
@@ -140,11 +384,11 @@
                 </div>
 
                 <!-- Sub sección de Uñas Acrílicas -->
-                <h4>Uñas Acrílicas</h4>
+                <h4 style="margin-top:30px;">Uñas Acrílicas</h4>
                 <div class="nail-options">
                     <div class="treatment-item">
                         <img src="images/naturales y frances.jpg" alt="Naturales y Frances">
-                        <h4>Naturales y Frances</h4>
+                        <h4>Naturales y Francés</h4>
                         <p>Estilo clásico con un toque elegante.</p>
                     </div>
                     <div class="treatment-item">
@@ -222,37 +466,29 @@
                 </div>
             </section>
         </div>
+
+        <div class="contact-section">
+            <h2>Contacto y Reservaciones</h2>
+            <div class="contact-info">
+                <p><strong>Teléfono:</strong> <a href="tel:+50487647340" class="contact-links">+504 8764-7340</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/50487647340?text=Buen%20día%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20salón.%20Me%20gustaría%20recibir%20más%20información%2C%20por%20favor." class="contact-links" target="_blank">Escríbenos por WhatsApp</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/natur_all83/" class="contact-links" target="_blank">@naturallhn</a></p>
+                <p><strong>Dirección:</strong> Edificio La Placita, Tegucigalpa, Honduras</p>
+                <p><strong>Horario:</strong> Lunes a sábado, 8:00 AM – 6:00 PM</p>
+                <p><strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/HUDmgae4HPJv7r268" class="contact-links" target="_blank">Ver ubicación</a></p>
+            </div>
+        </div>
+
+        <div class="map">
+            <h2>¿Dónde estamos?</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.6830331984684!2d-87.18213742515128!3d14.083692389523456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fbd00394dc373%3A0x58f534e00a9fa34c!2sNatur%20All!5e1!3m2!1ses!2shn!4v1748022632238!5m2!1ses!2shn"
+                width="100%" height="260" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
 
-    <footer>
+    <footer style="text-align:center;padding:20px 0 8px 0; color:#397d54;">
         <p>&copy; 2025 Natur All. Todos los derechos reservados.</p>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
-        });
-
-        const links = document.querySelectorAll('nav a'); // Selecciona los enlaces del nav
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevenir el comportamiento predeterminado
-                const href = this.getAttribute('href');
-                document.body.classList.remove('show'); // Remueve la clase de visualización
-                setTimeout(() => {
-                    window.location.href = href; // Redirigir después de la animación
-                }, 500); // Tiempo de espera para que coincida con la duración de la animación
-            });
-        });
-    </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17108974154"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17108974154');
-</script>
 </body>
 </html>
