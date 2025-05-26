@@ -4,265 +4,427 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salón - Natur All</title>
+    <link rel="shortcut icon" href="images/Natur All Logo.png" type="image/x-icon">
     <style>
+        :root {
+            --main-brown: #8a6343;
+            --secondary-brown: #b48a68;
+            --light-beige: #f4e6d7;
+            --dark-brown: #6b472b;
+            --text-brown: #432d1a;
+        }
         body {
+            background: var(--light-beige);
+            font-family: 'Georgia', serif;
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: #333;
-            background:
-                linear-gradient(rgba(43, 57, 84, 0.36), rgba(52, 125, 84, 0.19)),
-                url('https://media.istockphoto.com/id/952772504/photo/beautician-doing-permanent-eyebrows-makeup-tattoo-on-woman-face.jpg?s=612x612&w=0&k=20&c=vwYLinl1KoO0r-IpSnCPPo-zLf78FXguNGSYaK7JYvk=') no-repeat center center fixed;
-            /* Imagen de fondo de pestañas/salón, puedes cambiar el link a una de pestañas en salón si tienes una mejor */
-            background-size: cover;
+            padding: 0;
+            color: var(--text-brown);
         }
         header {
-            background: rgba(57, 125, 84, 0.92);
-            color: #fff;
-            padding: 32px 0 15px 0;
+            background: var(--main-brown);
+            padding: 32px 0 22px 0;
             text-align: center;
             border-bottom-left-radius: 25px;
             border-bottom-right-radius: 25px;
-            box-shadow: 0 4px 24px #2b5a3b6e;
+            box-shadow: 0 4px 24px #8a634340;
         }
-        header h1 { margin: 0 0 8px 0; font-size: 2.2em; letter-spacing: 2px;}
-        nav ul {
+        header nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 18px;
+            gap: 32px;
         }
-        nav ul li {
+        header nav ul li {
             margin: 0;
         }
-        nav ul li a {
+        header nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.07em;
+            font-size: 1.17em;
             transition: color .14s;
-            padding: 2px 5px;
+            padding: 2px 10px;
+            border-radius: 4px;
         }
-        nav ul li a:hover {
-            color: #ffac62;
+        header nav ul li a:hover {
+            color: var(--secondary-brown);
+            background: #fff5ee;
         }
-        .back-button {
-            display: inline-block;
-            margin: 22px 0 12px 0;
-            padding: 10px 24px;
-            font-size: 16px;
+        header h1 {
             color: #fff;
-            background-color: #397d54;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-            transition: background-color .18s;
+            font-size: 2.7em;
+            margin: 20px 0 12px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
         }
-        .back-button:hover {
-            background-color: #285c3e;
+        header p {
+            color: #fff;
+            font-size: 1.32em;
+            margin: 0;
+            font-family: 'Georgia', serif;
         }
         .section-container {
             max-width: 1150px;
-            margin: 32px auto;
-            background: rgba(255,255,255,0.97);
-            border-radius: 18px;
-            padding: 24px 18px 30px 18px;
-            box-shadow: 0 8px 32px #b9e7bd7c;
+            margin: 44px auto;
+            background: #fff;
+            border-radius: 22px;
+            padding: 38px 20px 38px 20px;
+            box-shadow: 0 4px 24px #8a634340;
         }
         h2 {
-            color: #397d54;
-            border-bottom: 1.5px solid #d3eed4;
+            color: var(--main-brown);
+            border-bottom: 1.5px solid var(--secondary-brown);
             padding-bottom: 4px;
             margin-top: 0;
-            font-size: 1.5em;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 32px;
+            font-family: 'Georgia', serif;
         }
-        h3 {
-            color: #295c3e;
-            margin-top: 38px;
-            font-size: 1.13em;
-        }
-        .treatments-list, .nail-options {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 22px 13px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 38px 38px;
+            margin-bottom: 44px;
         }
-        .treatment-item {
-            background: #f8fcfa;
-            border: 1.5px solid #e3ece6;
-            border-radius: 12px;
-            padding: 14px 10px 12px 10px;
-            box-shadow: 0 2px 10px #d3eed4a1;
+        .spa-card {
+            background: var(--light-beige);
+            border: none;
+            box-shadow: 0 2px 16px #b48a6840;
+            border-radius: 14px;
+            padding: 30px 26px 30px 26px;
+            min-height: 340px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            transition: transform .12s, box-shadow .12s;
-            min-height: 230px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            transition: box-shadow 0.18s, transform 0.14s;
         }
-        .treatment-item:hover {
-            transform: translateY(-4px) scale(1.025);
-            box-shadow: 0 8px 28px #b9e7bdc0;
-            border-color: #b9e7bd;
+        .spa-card:hover {
+            box-shadow: 0 6px 30px #b48a6860;
+            transform: translateY(-3px) scale(1.015);
         }
-        .treatment-item img {
-            width: 100px;
-            height: 100px;
+        .spa-title {
+            font-family: 'Georgia', serif;
+            font-size: 1.31em;
+            font-weight: 500;
+            margin-bottom: 11px;
+            margin-top: 0;
+            letter-spacing: 0.1px;
+            color: var(--dark-brown);
+        }
+        .spa-image {
+            width: 100%;
+            max-width: 140px;
+            height: 110px;
             object-fit: cover;
-            border-radius: 7px;
-            margin-bottom: 8px;
-            box-shadow: 0 2px 8px #c8e2cc81;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 10px #b48a6840;
+            align-self: center;
+            background: #f5f5f5;
         }
-        .treatment-item h4 {
+        .spa-desc {
             font-size: 1.04em;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #295c3e;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            margin-bottom: 8px;
+            line-height: 1.38;
+            color: var(--text-brown);
+        }
+        .reserve-btn {
+            display: block;
+            width: 100%;
+            margin-top: 18px;
+            padding: 13px 0;
+            background: var(--light-beige);
+            color: var(--main-brown);
+            border: 1.3px solid var(--main-brown);
+            border-radius: 0;
+            font-size: 1.07em;
+            letter-spacing: 0.04em;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
             text-align: center;
-        }
-        .treatment-item p {
-            font-size: .96em;
-            color: #444;
-            text-align: center;
-            margin-bottom: 0;
-        }
-        .contact-section { margin-top: 40px; }
-        .contact-info p {
-            margin: 7px 0;
-            font-size: 1.03em;
-        }
-        .contact-links a { color: #397d54; text-decoration: underline; }
-        .contact-social {
-            margin-top: 8px;
-            display: flex;
-            gap: 18px;
-            align-items: center;
-        }
-        .contact-social a {
-            display: inline-flex;
-            align-items: center;
-            color: #397d54;
-            font-size: 1.13em;
+            transition: background 0.14s, color 0.14s;
             text-decoration: none;
-            transition: color 0.15s;
         }
-        .contact-social a:hover {
-            color: #ffac62;
+        .reserve-btn:hover {
+            background: var(--main-brown);
+            color: #fff;
         }
-        .contact-social span {
-            font-size: 1.6em;
-            margin-right: 7px;
+        .category-heading {
+            color: var(--secondary-brown);
+            font-size: 1.28em;
+            margin-top: 38px;
+            margin-bottom: 17px;
+            text-align: left;
+            font-family: 'Georgia', serif;
+            font-weight: 600;
         }
+        .contact-section {
+            margin-top: 50px;
+            background: var(--light-beige);
+            border-radius: 16px;
+            padding: 30px 18px 20px 18px;
+            box-shadow: 0 1px 8px #b48a6840;
+        }
+        .contact-section h2 {
+            color: var(--main-brown);
+            border-bottom: 1.5px solid var(--secondary-brown);
+            padding-bottom: 4px;
+            margin-top: 0;
+            font-size: 1.3em;
+            text-align: center;
+        }
+        .contact-info p {
+            margin: 11px 0;
+            font-size: 1.07em;
+            text-align: center;
+        }
+        .contact-links a { color: var(--main-brown); text-decoration: underline; }
         .map {
             margin-top: 30px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 12px #a2c8a7;
+            box-shadow: 0 2px 12px #b48a6840;
+            background: #f4f4f4;
         }
-        @media (max-width: 768px) {
-            header {padding: 18px 0 10px 0;}
-            header h1 {font-size: 1.4em;}
-            nav ul {gap: 10px;}
-            .section-container {padding: 7px 2vw 18px 2vw;}
-            h2 {font-size: 1.1em;}
-            .treatments-list, .nail-options {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 11px 7px;
-            }
-            .treatment-item {min-height: 160px; padding: 8px 3px 9px 3px;}
-            .treatment-item img {width: 58px; height: 58px;}
-            .back-button {padding: 8px 12px; font-size: 14px;}
+        .map h2 {
+            color: var(--main-brown);
+            margin-top: 0;
+            font-size: 1.1em;
+            border: none;
+            padding: 0;
+            text-align: center;
+        }
+        .textus-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+            background: var(--main-brown);
+            color: #fff;
+            border: 1.5px solid var(--main-brown);
+            border-radius: 6px;
+            box-shadow: 0 2px 18px #b48a6840;
+            padding: 13px 28px;
+            font-family: 'Georgia', serif;
+            font-size: 1.13em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.14s, color 0.14s, box-shadow 0.12s;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+        .textus-btn:hover {
+            background: #fff;
+            color: var(--main-brown);
+            border: 1.5px solid var(--main-brown);
+        }
+        @media (max-width: 1050px) {
+            .section-container {padding: 8px 2vw 18px 2vw;}
+            .services-grid {grid-template-columns: repeat(2, 1fr);}
+            .textus-btn {padding: 11px 22px; font-size: 1em; bottom: 18px; right: 12px;}
+        }
+        @media (max-width: 700px) {
+            .services-grid {grid-template-columns: 1fr;}
+            .spa-card {padding: 18px 7vw 18px 7vw;}
+            h2 {font-size: 1.2em;}
+            .textus-btn {padding: 8px 16px; font-size: .95em; bottom: 10px; right: 7px;}
+        }
+        @media (max-width: 430px) {
+            .spa-card {padding: 9vw 2vw;}
+            .textus-btn {font-size: .91em;}
+        }
+        footer {
+            text-align:center;
+            padding:22px 0 10px 0;
+            color:var(--main-brown);
+            font-size: 1.04em;
         }
     </style>
     <script>
-    // Traducción automática según idioma del navegador
+    // Traducción dinámica de TODO el contenido (menú, títulos, cards, contacto, botón flotante)
     document.addEventListener("DOMContentLoaded", function() {
-        var lang = navigator.language || navigator.userLanguage;
-        if(lang && lang.startsWith('en')) {
-            // Header y nav
+        // Menú dinámico
+        var navList = document.querySelector('header nav ul');
+        var menu = {
+            es: [
+                { text: "Inicio", href: "index.html" },
+                { text: "Masajes", href: "spa.html" },
+                { text: "Spa para Caballeros", href: "spa-caballeros.html" },
+                { text: "Nails Spa", href: "nails-spa.html" },
+                { text: "Contáctanos", href: "contacto.html" }
+            ],
+            en: [
+                { text: "Home", href: "index.html" },
+                { text: "Massages", href: "spa.html" },
+                { text: "Gentlemen's Spa", href: "spa-caballeros.html" },
+                { text: "Nails Spa", href: "nails-spa.html" },
+                { text: "Contact Us", href: "contacto.html" }
+            ]
+        };
+        var lang = navigator.language || navigator.userLanguage || 'es';
+        var isEn = lang.startsWith('en');
+        var menuLang = isEn ? menu.en : menu.es;
+        navList.innerHTML = "";
+        menuLang.forEach(function(item) {
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = item.href;
+            a.textContent = item.text;
+            li.appendChild(a);
+            navList.appendChild(li);
+        });
+
+        // Datos de servicios (títulos y descripciones en ambos idiomas)
+        var services = [
+            // Hair
+            [
+                {es: "Células Madres", en: "Stem Cells", 
+                 esd: "Un tratamiento innovador que rejuvenece y revitaliza el cabello.",
+                 end: "An innovative treatment that rejuvenates and revitalizes your hair."},
+                {es: "Babylights", en: "Babylights", 
+                 esd: "Técnica de coloración sutil que imita los reflejos naturales.",
+                 end: "Subtle coloring technique that mimics natural highlights."},
+                {es: "Balayage", en: "Balayage", 
+                 esd: "Técnica de pintura a mano que da un acabado natural y luminoso.",
+                 end: "Hand-painted technique for a natural, luminous finish."},
+                {es: "Mechas", en: "Highlights", 
+                 esd: "Agrega dimensión y luz a tu cabello con mechas personalizadas.",
+                 end: "Add dimension and light to your hair with personalized highlights."},
+                {es: "Tintes", en: "Hair Coloring",
+                 esd: "Colores vibrantes para un cambio de look completo.",
+                 end: "Vibrant colors for a complete makeover."},
+                {es: "Keratina", en: "Keratin", 
+                 esd: "Tratamiento que alisa el cabello y controla el frizz.",
+                 end: "Straightening treatment that controls frizz."},
+                {es: "Nanoterapia", en: "Nanotherapy",
+                 esd: "Reparación profunda del cabello utilizando nanomoléculas.",
+                 end: "Deep hair repair using nanomolecules."}
+            ],
+            // Hands & Feet
+            [
+                {es: "Manicure Spa", en: "Spa Manicure",
+                 esd: "Un tratamiento relajante que incluye exfoliación e hidratación.",
+                 end: "A relaxing treatment including exfoliation and hydration."},
+                {es: "Pedicure Spa", en: "Spa Pedicure",
+                 esd: "Cuida tus pies con un tratamiento revitalizante y exfoliante.",
+                 end: "Pamper your feet with a revitalizing, exfoliating treatment."},
+                {es: "Esmaltado en Gel", en: "Gel Polish",
+                 esd: "Un acabado duradero y brillante para tus uñas.",
+                 end: "Long-lasting, shiny finish for your nails."},
+                {es: "Esmaltado Regular", en: "Regular Polish",
+                 esd: "Elige tu color favorito para un look clásico.",
+                 end: "Choose your favorite color for a classic look."},
+                {es: "Manicure Normal", en: "Standard Manicure",
+                 esd: "Un servicio básico para mantener tus uñas en forma.",
+                 end: "Basic service to keep your nails in shape."},
+                {es: "Pedicure Normal", en: "Standard Pedicure",
+                 esd: "Un cuidado esencial para tus pies.",
+                 end: "Essential care for your feet."},
+                {es: "Pedicure + Parafina", en: "Pedicure + Paraffin",
+                 esd: "Hidratación profunda con un tratamiento de parafina.",
+                 end: "Deep hydration with a paraffin treatment."},
+                {es: "Esmaltado Semi Permanente", en: "Semi-Permanent Polish",
+                 esd: "Un acabado duradero que se mantiene impecable por semanas.",
+                 end: "Long-lasting finish that stays flawless for weeks."}
+            ],
+            // Acrylics
+            [
+                {es: "Naturales y Francés", en: "Natural & French",
+                 esd: "Estilo clásico con un toque elegante.",
+                 end: "Classic style with an elegant touch."},
+                {es: "Cover (Blanco, Rosado o Sand)", en: "Cover (White, Pink or Sand)",
+                 esd: "Acabado uniforme que se adapta a tu estilo.",
+                 end: "Even finish that adapts to your style."},
+                {es: "Dry Manicure", en: "Dry Manicure",
+                 esd: "Técnica que ofrece una manicura perfecta sin agua.",
+                 end: "Perfect manicure technique without water."},
+                {es: "Calcio de Cuccio", en: "Cuccio Calcium",
+                 esd: "Fortalecimiento de uñas con calcio para un look saludable.",
+                 end: "Strengthening nails with calcium for a healthy look."},
+                {es: "Efecto Aurora", en: "Aurora Effect",
+                 esd: "Un acabado iridiscente que captura la luz.",
+                 end: "Iridescent finish that captures the light."},
+                {es: "Efecto Espejo", en: "Mirror Effect",
+                 esd: "Brillo intenso que refleja la luz como un espejo.",
+                 end: "Intense shine that reflects light like a mirror."},
+                {es: "Efecto Ojo de Gato", en: "Cat Eye Effect",
+                 esd: "Un diseño único que crea un efecto de profundidad.",
+                 end: "Unique design that creates depth."}
+            ],
+            // Face
+            [
+                {es: "Maquillaje Pro con Pestañas", en: "Pro Makeup with Lashes",
+                 esd: "Un look glamuroso con pestañas para realzar la mirada.",
+                 end: "A glamorous look with lashes to enhance your gaze."},
+                {es: "Pestañas Clásicas", en: "Classic Lashes",
+                 esd: "Estilo tradicional para un efecto natural.",
+                 end: "Traditional style for a natural effect."},
+                {es: "Pestañas Híbridas", en: "Hybrid Lashes",
+                 esd: "Combinación de pestañas clásicas y de volumen.",
+                 end: "Combination of classic and volume lashes."},
+                {es: "Pestañas Volumen", en: "Volume Lashes",
+                 esd: "Un look dramático y lleno de volumen para tus pestañas.",
+                 end: "A dramatic, full look for your lashes."},
+                {es: "Lifting de Pestañas", en: "Lash Lifting",
+                 esd: "Eleva y curva tus pestañas para una mirada más abierta.",
+                 end: "Lifts and curls your lashes for a more open look."},
+                {es: "Laminado de Cejas", en: "Brow Lamination",
+                 esd: "Controla y da forma a tus cejas para un look perfecto.",
+                 end: "Controls and shapes your brows for a perfect look."},
+                {es: "Microblading", en: "Microblading",
+                 esd: "Define y da forma a tus cejas con un acabado natural.",
+                 end: "Defines and shapes your brows with a natural finish."}
+            ]
+        ];
+
+        // Coloca los títulos y descripciones en su idioma
+        let k = 0;
+        document.querySelectorAll('.services-grid').forEach(function(grid, gi){
+            grid.querySelectorAll('.spa-card').forEach(function(card, idx){
+                let svc = services[gi][idx];
+                card.querySelector('.spa-title').textContent = isEn ? svc.en : svc.es;
+                card.querySelector('.spa-desc').textContent = isEn ? svc.end : svc.esd;
+                let btn = card.querySelector('.reserve-btn');
+                let btnText = isEn ? "Book " + svc.en : "Reservar " + svc.es;
+                btn.textContent = btnText;
+                // WhatsApp link personalizado
+                let msg = isEn
+                  ? "Hello! I would like to book the service: " + svc.en
+                  : "Hola! Me gustaría reservar el servicio de: " + svc.es;
+                btn.href = "https://wa.me/50487647340?text=" + encodeURIComponent(msg);
+                btn.target = "_blank";
+            });
+        });
+
+        // Títulos y secciones
+        var h1 = document.querySelector('header h1');
+        var desc = document.getElementById('salon-desc');
+        var h2 = document.querySelector('.section-container > .content-box > h2');
+        var sectionTitles = document.querySelectorAll('.category-heading');
+        var contactTitle = document.querySelector('.contact-section h2');
+        var footer = document.querySelector('footer p');
+        var textusBtn = document.getElementById('textus-btn');
+        if(isEn){
             document.documentElement.lang = "en";
             document.title = "Salon - Natur All";
-            document.querySelector("header h1").textContent = "Natur All Salon";
-            document.querySelector("header p")?.remove();
-            // Nav traducción
-            var navLinks = document.querySelectorAll("nav ul li a");
-            navLinks[0].textContent = "Spa";
-            navLinks[1].textContent = "Gentlemen's Spa";
-            navLinks[2].textContent = "Contact Us";
-            navLinks[3].textContent = "Promotions";
-            // Botón inicio
-            document.querySelector(".back-button").textContent = "Back to Home";
-            // Secciones
-            document.querySelector("h2").textContent = "Salon Treatments";
-            document.querySelectorAll("h3")[0].textContent = "Hair";
-            document.querySelectorAll("h3")[1].textContent = "Hands & Feet Treatments";
-            document.querySelector('.section-container h4[style]').textContent = "Acrylic Nails";
-            // Cabello
-            var hair = [
-                ["Stem Cells", "An innovative treatment that rejuvenates and revitalizes hair."],
-                ["Babylights", "Subtle coloring technique that mimics natural highlights."],
-                ["Balayage", "Hand-painted technique for a natural, luminous finish."],
-                ["Highlights", "Add dimension and light to your hair with personalized highlights."],
-                ["Color", "Vibrant colors for a complete makeover."],
-                ["Keratin", "Straightening treatment that controls frizz."],
-                ["Nanotherapy", "Deep hair repair using nanomolecules."]
-            ];
-            // Manos y pies
-            var handsFeet = [
-                ["Spa Manicure", "A relaxing treatment including exfoliation and hydration."],
-                ["Spa Pedicure", "Pamper your feet with a revitalizing, exfoliating treatment."],
-                ["Gel Polish", "Long-lasting, shiny finish for your nails."],
-                ["Regular Polish", "Choose your favorite color for a classic look."],
-                ["Standard Manicure", "Basic service to keep your nails in shape."],
-                ["Standard Pedicure", "Essential care for your feet."],
-                ["Pedicure + Paraffin", "Deep hydration with a paraffin treatment."],
-                ["Semi-Permanent Polish", "Long-lasting finish that stays flawless for weeks."]
-            ];
-            // Uñas acrílicas
-            var acrylic = [
-                ["Natural & French", "Classic style with an elegant touch."],
-                ["Cover (White, Pink or Sand)", "Even finish that adapts to your style."],
-                ["Dry Manicure", "Perfect manicure technique without water."],
-                ["Cuccio Calcium", "Strengthening nails with calcium for a healthy look."],
-                ["Aurora Effect", "Iridescent finish that captures the light."],
-                ["Mirror Effect", "Intense shine that reflects light like a mirror."],
-                ["Cat Eye Effect", "Unique design that creates depth."]
-            ];
-            // Rostro
-            var face = [
-                ["Pro Makeup with Lashes", "A glamorous look with lashes to enhance your gaze."],
-                ["Classic Lashes", "Traditional style for a natural effect."],
-                ["Hybrid Lashes", "Combination of classic and volume lashes."],
-                ["Volume Lashes", "A dramatic, full look for your lashes."],
-                ["Lash Lifting", "Lifts and curls your lashes for a more open look."],
-                ["Brow Lamination", "Controls and shapes your brows for a perfect look."],
-                ["Microblading", "Defines and shapes your brows with a natural finish."]
-            ];
-            // Cambiar textos dinámicamente
-            var items = document.querySelectorAll(".treatments-list")[0].children;
-            for(let i=0; i<hair.length; i++) {
-                items[i].querySelector("h4").textContent = hair[i][0];
-                items[i].querySelector("p").textContent = hair[i][1];
-            }
-            items = document.querySelectorAll(".treatments-list")[1].children;
-            for(let i=0; i<handsFeet.length; i++) {
-                items[i].querySelector("h4").textContent = handsFeet[i][0];
-                items[i].querySelector("p").textContent = handsFeet[i][1];
-            }
-            items = document.querySelectorAll(".nail-options")[0].children;
-            for(let i=0; i<acrylic.length; i++) {
-                items[i].querySelector("h4").textContent = acrylic[i][0];
-                items[i].querySelector("p").textContent = acrylic[i][1];
-            }
-            items = document.querySelectorAll(".treatments-list")[2].children;
-            for(let i=0; i<face.length; i++) {
-                items[i].querySelector("h4").textContent = face[i][0];
-                items[i].querySelector("p").textContent = face[i][1];
-            }
+            h1.textContent = "Natur All Salon";
+            desc.textContent = "Beauty and style in Tegucigalpa · Book your appointment today";
+            h2.textContent = "Salon Treatments";
+            sectionTitles[0].textContent = "Hair";
+            sectionTitles[1].textContent = "Hands & Feet Treatments";
+            sectionTitles[2].textContent = "Acrylic Nails";
+            sectionTitles[3].textContent = "Face";
+            contactTitle.textContent = "Contact & Bookings";
+            footer.textContent = "© 2025 Natur All. All rights reserved.";
+            if(textusBtn) textusBtn.textContent = "Text Us";
             // Contacto
-            document.querySelector('.contact-section h2').textContent = "Contact & Bookings";
             let contact = document.querySelectorAll('.contact-info p');
             contact[0].innerHTML = "<strong>Phone:</strong> <a href=\"tel:+50487647340\" class=\"contact-links\">+504 8764-7340</a>";
             contact[1].innerHTML = "<strong>WhatsApp:</strong> <a href=\"https://wa.me/50487647340?text=Good%20afternoon%2C%20I%20am%20interested%20in%20your%20salon%20services.%20I%20would%20like%20to%20request%20more%20information%2C%20please.\" class=\"contact-links\" target=\"_blank\">Message us on WhatsApp</a>";
@@ -271,7 +433,28 @@
             contact[4].innerHTML = "<strong>Hours:</strong> Monday to Saturday, 8:00 AM – 6:00 PM";
             contact[5].innerHTML = "<strong>Google Maps:</strong> <a href=\"https://maps.app.goo.gl/HUDmgae4HPJv7r268\" class=\"contact-links\" target=\"_blank\">View location</a>";
             document.querySelector('.map h2').textContent = "Our Location";
-            document.querySelector('footer p').textContent = "© 2025 Natur All. All rights reserved.";
+        } else {
+            document.documentElement.lang = "es";
+            document.title = "Salón - Natur All";
+            h1.textContent = "Salón Natur All";
+            desc.textContent = "Belleza y estilo en Tegucigalpa · Reserva tu cita hoy";
+            h2.textContent = "Tratamientos de Salón";
+            sectionTitles[0].textContent = "Cabello";
+            sectionTitles[1].textContent = "Tratamientos de Manos y Pies";
+            sectionTitles[2].textContent = "Uñas Acrílicas";
+            sectionTitles[3].textContent = "Rostro";
+            contactTitle.textContent = "Contacto y Reservaciones";
+            footer.textContent = "© 2025 Natur All. Todos los derechos reservados.";
+            if(textusBtn) textusBtn.textContent = "Escríbenos";
+            // Contacto
+            let contact = document.querySelectorAll('.contact-info p');
+            contact[0].innerHTML = "<strong>Teléfono:</strong> <a href=\"tel:+50487647340\" class=\"contact-links\">+504 8764-7340</a>";
+            contact[1].innerHTML = "<strong>WhatsApp:</strong> <a href=\"https://wa.me/50487647340?text=Buen%20día%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20salón.%20Me%20gustaría%20recibir%20más%20información%2C%20por%20favor.\" class=\"contact-links\" target=\"_blank\">Escríbenos por WhatsApp</a>";
+            contact[2].innerHTML = "<strong>Instagram:</strong> <a href=\"https://www.instagram.com/natur_all83/\" class=\"contact-links\" target=\"_blank\">@naturallhn</a>";
+            contact[3].innerHTML = "<strong>Dirección:</strong> Edificio La Placita, Tegucigalpa, Honduras";
+            contact[4].innerHTML = "<strong>Horario:</strong> Lunes a sábado, 8:00 AM – 6:00 PM";
+            contact[5].innerHTML = "<strong>Google Maps:</strong> <a href=\"https://maps.app.goo.gl/HUDmgae4HPJv7r268\" class=\"contact-links\" target=\"_blank\">Ver ubicación</a>";
+            document.querySelector('.map h2').textContent = "¿Dónde estamos?";
         }
     });
     </script>
@@ -279,192 +462,207 @@
 <body>
     <header>
         <nav>
-            <h1>Natur All Salon</h1>
             <ul>
-                <li><a href="spa.html">Spa</a></li>
-                <li><a href="spa-caballeros.html">Spa para Caballeros</a></li>
-                <li><a href="contacto.html">Contáctanos</a></li>
-                <li><a href="promos.html">Promociones</a></li>
+                <!-- Menú dinámico -->
             </ul>
         </nav>
+        <h1>Salón Natur All</h1>
+        <p id="salon-desc">Belleza y estilo en Tegucigalpa · Reserva tu cita hoy</p>
     </header>
-
-    <a href="index.html" class="back-button">Volver a Inicio</a>
-
     <div class="section-container">
         <div class="content-box">
             <h2>Tratamientos de Salón</h2>
-            
-            <!-- Sección de Cabello -->
-            <section>
-                <h3>Cabello</h3>
-                <div class="treatments-list">
-                    <div class="treatment-item">
-                        <img src="images/celulas-madres.png" alt="Células Madres">
-                        <h4>Células Madres</h4>
-                        <p>Un tratamiento innovador que rejuvenece y revitaliza el cabello.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/babylights.jpg" alt="Babylights">
-                        <h4>Babylights</h4>
-                        <p>Técnica de coloración sutil que imita los reflejos naturales.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/balayage.jpg" alt="Balayage">
-                        <h4>Balayage</h4>
-                        <p>Técnica de pintura a mano que da un acabado natural y luminoso.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/mecha.jpg" alt="Mechas">
-                        <h4>Mechas</h4>
-                        <p>Agrega dimensión y luz a tu cabello con mechas personalizadas.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/tintes.jpg" alt="Tintes">
-                        <h4>Tintes</h4>
-                        <p>Colores vibrantes para un cambio de look completo.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/keratina.jpg" alt="Keratina">
-                        <h4>Keratina</h4>
-                        <p>Tratamiento que alisa el cabello y controla el frizz.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/nanoterapia.png" alt="Nanoterapia">
-                        <h4>Nanoterapia</h4>
-                        <p>Reparación profunda del cabello utilizando nanomoléculas.</p>
-                    </div>
+            <!-- Cabello -->
+            <div class="category-heading">Cabello</div>
+            <div class="services-grid">
+                <div class="spa-card">
+                    <img src="images/celulas-madres.png" alt="Células Madres" class="spa-image">
+                    <div class="spa-title">Células Madres</div>
+                    <div class="spa-desc">Un tratamiento innovador que rejuvenece y revitaliza el cabello.</div>
+                    <a class="reserve-btn">Reservar Células Madres</a>
                 </div>
-            </section>
+                <div class="spa-card">
+                    <img src="images/babylights.jpg" alt="Babylights" class="spa-image">
+                    <div class="spa-title">Babylights</div>
+                    <div class="spa-desc">Técnica de coloración sutil que imita los reflejos naturales.</div>
+                    <a class="reserve-btn">Reservar Babylights</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/balayage.jpg" alt="Balayage" class="spa-image">
+                    <div class="spa-title">Balayage</div>
+                    <div class="spa-desc">Técnica de pintura a mano que da un acabado natural y luminoso.</div>
+                    <a class="reserve-btn">Reservar Balayage</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/mecha.jpg" alt="Mechas" class="spa-image">
+                    <div class="spa-title">Mechas</div>
+                    <div class="spa-desc">Agrega dimensión y luz a tu cabello con mechas personalizadas.</div>
+                    <a class="reserve-btn">Reservar Mechas</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/tintes.jpg" alt="Tintes" class="spa-image">
+                    <div class="spa-title">Tintes</div>
+                    <div class="spa-desc">Colores vibrantes para un cambio de look completo.</div>
+                    <a class="reserve-btn">Reservar Tintes</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/keratina.jpg" alt="Keratina" class="spa-image">
+                    <div class="spa-title">Keratina</div>
+                    <div class="spa-desc">Tratamiento que alisa el cabello y controla el frizz.</div>
+                    <a class="reserve-btn">Reservar Keratina</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/nanoterapia.png" alt="Nanoterapia" class="spa-image">
+                    <div class="spa-title">Nanoterapia</div>
+                    <div class="spa-desc">Reparación profunda del cabello utilizando nanomoléculas.</div>
+                    <a class="reserve-btn">Reservar Nanoterapia</a>
+                </div>
+            </div>
 
-            <!-- Sección de Tratamientos de Manos y Pies -->
-            <section>
-                <h3>Tratamientos de Manos y Pies</h3>
-                <div class="treatments-list">
-                    <div class="treatment-item">
-                        <img src="images/manicure-spa.jpg" alt="Manicure Spa">
-                        <h4>Manicure Spa</h4>
-                        <p>Un tratamiento relajante que incluye exfoliación e hidratación.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/pedicure-spa.jpg" alt="Pedicure Spa">
-                        <h4>Pedicure Spa</h4>
-                        <p>Cuida tus pies con un tratamiento revitalizante y exfoliante.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/esmaltado en gel.jpg" alt="Esmaltado en Gel">
-                        <h4>Esmaltado en Gel</h4>
-                        <p>Un acabado duradero y brillante para tus uñas.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/esmaltado regular.png" alt="Esmaltado Regular">
-                        <h4>Esmaltado Regular</h4>
-                        <p>Elige tu color favorito para un look clásico.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/manicure normal.jpg" alt="Manicure Normal">
-                        <h4>Manicure Normal</h4>
-                        <p>Un servicio básico para mantener tus uñas en forma.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/pedicure normal.jpg" alt="Pedicure Normal">
-                        <h4>Pedicure Normal</h4>
-                        <p>Un cuidado esencial para tus pies.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/pedicure - parafina.jpg" alt="Pedicure + Parafina">
-                        <h4>Pedicure + Parafina</h4>
-                        <p>Hidratación profunda con un tratamiento de parafina.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/esmaltado semi permanente.jpg" alt="Esmaltado Semi Permanente">
-                        <h4>Esmaltado Semi Permanente</h4>
-                        <p>Un acabado duradero que se mantiene impecable por semanas.</p>
-                    </div>
+            <!-- Manos y pies -->
+            <div class="category-heading">Tratamientos de Manos y Pies</div>
+            <div class="services-grid">
+                <div class="spa-card">
+                    <img src="images/manicure-spa.jpg" alt="Manicure Spa" class="spa-image">
+                    <div class="spa-title">Manicure Spa</div>
+                    <div class="spa-desc">Un tratamiento relajante que incluye exfoliación e hidratación.</div>
+                    <a class="reserve-btn">Reservar Manicure Spa</a>
                 </div>
-
-                <!-- Sub sección de Uñas Acrílicas -->
-                <h4 style="margin-top:30px;">Uñas Acrílicas</h4>
-                <div class="nail-options">
-                    <div class="treatment-item">
-                        <img src="images/naturales y frances.jpg" alt="Naturales y Frances">
-                        <h4>Naturales y Francés</h4>
-                        <p>Estilo clásico con un toque elegante.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/cover.jpg" alt="Cover">
-                        <h4>Cover (Blanco, Rosado o Sand)</h4>
-                        <p>Acabado uniforme que se adapta a tu estilo.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/Dry Manicure.jpg" alt="Dry Manicure">
-                        <h4>Dry Manicure</h4>
-                        <p>Técnica que ofrece una manicura perfecta sin agua.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/Calcio de Cuccio.jpg" alt="Calcio de Cuccio">
-                        <h4>Calcio de Cuccio</h4>
-                        <p>Fortalecimiento de uñas con calcio para un look saludable.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/Efecto Aurora.jpg" alt="Efecto Aurora">
-                        <h4>Efecto Aurora</h4>
-                        <p>Un acabado iridiscente que captura la luz.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/Efecto-espejo.jpg" alt="Efecto Espejo">
-                        <h4>Efecto Espejo</h4>
-                        <p>Brillo intenso que refleja la luz como un espejo.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/efecto ojo de gato.jpg" alt="Efecto Ojo de Gato">
-                        <h4>Efecto Ojo de Gato</h4>
-                        <p>Un diseño único que crea un efecto de profundidad.</p>
-                    </div>
+                <div class="spa-card">
+                    <img src="images/pedicure-spa.jpg" alt="Pedicure Spa" class="spa-image">
+                    <div class="spa-title">Pedicure Spa</div>
+                    <div class="spa-desc">Cuida tus pies con un tratamiento revitalizante y exfoliante.</div>
+                    <a class="reserve-btn">Reservar Pedicure Spa</a>
                 </div>
-            </section>
-
-            <!-- Sección de Rostro -->
-            <section>
-                <h3>Rostro</h3>
-                <div class="treatments-list">
-                    <div class="treatment-item">
-                        <img src="images/maquillaje-pestanas-postizas1.jpg" alt="Maquillaje Pro con Pestañas">
-                        <h4>Maquillaje Pro con Pestañas</h4>
-                        <p>Un look glamuroso con pestañas para realzar la mirada.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/pestañas clasicas.jpg" alt="Pestañas Clásicas">
-                        <h4>Pestañas Clásicas</h4>
-                        <p>Estilo tradicional para un efecto natural.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/pestañas hibridas.jpg" alt="Pestañas Híbridas">
-                        <h4>Pestañas Híbridas</h4>
-                        <p>Combinación de pestañas clásicas y de volumen.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/volumen-volumen1.jpg" alt="Pestañas Volumen">
-                        <h4>Pestañas Volumen</h4>
-                        <p>Un look dramático y lleno de volumen para tus pestañas.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/lifting de pestañas.jpg" alt="Lifting de Pestañas">
-                        <h4>Lifting de Pestañas</h4>
-                        <p>Eleva y curva tus pestañas para una mirada más abierta.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/laminado-cejas_01.jpg" alt="Laminado de Cejas">
-                        <h4>Laminado de Cejas</h4>
-                        <p>Controla y da forma a tus cejas para un look perfecto.</p>
-                    </div>
-                    <div class="treatment-item">
-                        <img src="images/microblading.jpg" alt="Microblading">
-                        <h4>Microblading</h4>
-                        <p>Define y da forma a tus cejas con un acabado natural.</p>
-                    </div>
+                <div class="spa-card">
+                    <img src="images/esmaltado en gel.jpg" alt="Esmaltado en Gel" class="spa-image">
+                    <div class="spa-title">Esmaltado en Gel</div>
+                    <div class="spa-desc">Un acabado duradero y brillante para tus uñas.</div>
+                    <a class="reserve-btn">Reservar Esmaltado en Gel</a>
                 </div>
-            </section>
+                <div class="spa-card">
+                    <img src="images/esmaltado regular.png" alt="Esmaltado Regular" class="spa-image">
+                    <div class="spa-title">Esmaltado Regular</div>
+                    <div class="spa-desc">Elige tu color favorito para un look clásico.</div>
+                    <a class="reserve-btn">Reservar Esmaltado Regular</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/manicure normal.jpg" alt="Manicure Normal" class="spa-image">
+                    <div class="spa-title">Manicure Normal</div>
+                    <div class="spa-desc">Un servicio básico para mantener tus uñas en forma.</div>
+                    <a class="reserve-btn">Reservar Manicure Normal</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/pedicure normal.jpg" alt="Pedicure Normal" class="spa-image">
+                    <div class="spa-title">Pedicure Normal</div>
+                    <div class="spa-desc">Un cuidado esencial para tus pies.</div>
+                    <a class="reserve-btn">Reservar Pedicure Normal</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/pedicure - parafina.jpg" alt="Pedicure + Parafina" class="spa-image">
+                    <div class="spa-title">Pedicure + Parafina</div>
+                    <div class="spa-desc">Hidratación profunda con un tratamiento de parafina.</div>
+                    <a class="reserve-btn">Reservar Pedicure + Parafina</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/esmaltado semi permanente.jpg" alt="Esmaltado Semi Permanente" class="spa-image">
+                    <div class="spa-title">Esmaltado Semi Permanente</div>
+                    <div class="spa-desc">Un acabado duradero que se mantiene impecable por semanas.</div>
+                    <a class="reserve-btn">Reservar Esmaltado Semi Permanente</a>
+                </div>
+            </div>
+            <!-- Uñas Acrílicas -->
+            <div class="category-heading">Uñas Acrílicas</div>
+            <div class="services-grid">
+                <div class="spa-card">
+                    <img src="images/naturales y frances.jpg" alt="Naturales y Frances" class="spa-image">
+                    <div class="spa-title">Naturales y Francés</div>
+                    <div class="spa-desc">Estilo clásico con un toque elegante.</div>
+                    <a class="reserve-btn">Reservar Naturales y Francés</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/cover.jpg" alt="Cover" class="spa-image">
+                    <div class="spa-title">Cover (Blanco, Rosado o Sand)</div>
+                    <div class="spa-desc">Acabado uniforme que se adapta a tu estilo.</div>
+                    <a class="reserve-btn">Reservar Cover</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/Dry Manicure.jpg" alt="Dry Manicure" class="spa-image">
+                    <div class="spa-title">Dry Manicure</div>
+                    <div class="spa-desc">Técnica que ofrece una manicura perfecta sin agua.</div>
+                    <a class="reserve-btn">Reservar Dry Manicure</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/Calcio de Cuccio.jpg" alt="Calcio de Cuccio" class="spa-image">
+                    <div class="spa-title">Calcio de Cuccio</div>
+                    <div class="spa-desc">Fortalecimiento de uñas con calcio para un look saludable.</div>
+                    <a class="reserve-btn">Reservar Calcio de Cuccio</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/Efecto Aurora.jpg" alt="Efecto Aurora" class="spa-image">
+                    <div class="spa-title">Efecto Aurora</div>
+                    <div class="spa-desc">Un acabado iridiscente que captura la luz.</div>
+                    <a class="reserve-btn">Reservar Efecto Aurora</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/Efecto-espejo.jpg" alt="Efecto Espejo" class="spa-image">
+                    <div class="spa-title">Efecto Espejo</div>
+                    <div class="spa-desc">Brillo intenso que refleja la luz como un espejo.</div>
+                    <a class="reserve-btn">Reservar Efecto Espejo</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/efecto ojo de gato.jpg" alt="Efecto Ojo de Gato" class="spa-image">
+                    <div class="spa-title">Efecto Ojo de Gato</div>
+                    <div class="spa-desc">Un diseño único que crea un efecto de profundidad.</div>
+                    <a class="reserve-btn">Reservar Efecto Ojo de Gato</a>
+                </div>
+            </div>
+            <!-- Rostro -->
+            <div class="category-heading">Rostro</div>
+            <div class="services-grid">
+                <div class="spa-card">
+                    <img src="images/maquillaje-pestanas-postizas1.jpg" alt="Maquillaje Pro con Pestañas" class="spa-image">
+                    <div class="spa-title">Maquillaje Pro con Pestañas</div>
+                    <div class="spa-desc">Un look glamuroso con pestañas para realzar la mirada.</div>
+                    <a class="reserve-btn">Reservar Maquillaje Pro con Pestañas</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/pestañas clasicas.jpg" alt="Pestañas Clásicas" class="spa-image">
+                    <div class="spa-title">Pestañas Clásicas</div>
+                    <div class="spa-desc">Estilo tradicional para un efecto natural.</div>
+                    <a class="reserve-btn">Reservar Pestañas Clásicas</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/pestañas hibridas.jpg" alt="Pestañas Híbridas" class="spa-image">
+                    <div class="spa-title">Pestañas Híbridas</div>
+                    <div class="spa-desc">Combinación de pestañas clásicas y de volumen.</div>
+                    <a class="reserve-btn">Reservar Pestañas Híbridas</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/volumen-volumen1.jpg" alt="Pestañas Volumen" class="spa-image">
+                    <div class="spa-title">Pestañas Volumen</div>
+                    <div class="spa-desc">Un look dramático y lleno de volumen para tus pestañas.</div>
+                    <a class="reserve-btn">Reservar Pestañas Volumen</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/lifting de pestañas.jpg" alt="Lifting de Pestañas" class="spa-image">
+                    <div class="spa-title">Lifting de Pestañas</div>
+                    <div class="spa-desc">Eleva y curva tus pestañas para una mirada más abierta.</div>
+                    <a class="reserve-btn">Reservar Lifting de Pestañas</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/laminado-cejas_01.jpg" alt="Laminado de Cejas" class="spa-image">
+                    <div class="spa-title">Laminado de Cejas</div>
+                    <div class="spa-desc">Controla y da forma a tus cejas para un look perfecto.</div>
+                    <a class="reserve-btn">Reservar Laminado de Cejas</a>
+                </div>
+                <div class="spa-card">
+                    <img src="images/microblading.jpg" alt="Microblading" class="spa-image">
+                    <div class="spa-title">Microblading</div>
+                    <div class="spa-desc">Define y da forma a tus cejas con un acabado natural.</div>
+                    <a class="reserve-btn">Reservar Microblading</a>
+                </div>
+            </div>
         </div>
 
         <div class="contact-section">
@@ -487,7 +685,11 @@
         </div>
     </div>
 
-    <footer style="text-align:center;padding:20px 0 8px 0; color:#397d54;">
+    <a href="https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All%20Salon." 
+       class="textus-btn" id="textus-btn" target="_blank">
+        Escríbenos
+    </a>
+    <footer>
         <p>&copy; 2025 Natur All. Todos los derechos reservados.</p>
     </footer>
 </body>
