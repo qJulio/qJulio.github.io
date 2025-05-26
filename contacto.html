@@ -2,153 +2,300 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Servicios de Masaje & Contacto | Natur All</title>
-    <meta name="description" content="Agenda tu masaje en Natur All. Consulta precios, servicios y contáctanos para reservar tu cita en Tegucigalpa.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Natur All</title>
+    <link rel="shortcut icon" href="images/Natur All Logo.png" type="image/x-icon">
     <style>
+        :root {
+            --main-brown: #8a6343;
+            --secondary-brown: #b48a68;
+            --light-beige: #f4e6d7;
+            --dark-brown: #6b472b;
+            --text-brown: #432d1a;
+        }
         body {
-            margin:0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: #333;
-            background: 
-                linear-gradient(rgba(34, 52, 36, 0.57), rgba(34, 52, 36, 0.67)),
-                url('https://c4.wallpaperflare.com/wallpaper/231/111/776/relax-girl-massage-wallpaper-preview.jpg?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
-            background-size: cover;
+            background: var(--light-beige);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-brown);
         }
         header {
-            background: rgba(57, 125, 84, 0.90);
-            color: #fff;
-            padding: 32px 0 24px 0;
+            background: var(--main-brown);
+            padding: 32px 0 22px 0;
             text-align: center;
             border-bottom-left-radius: 25px;
             border-bottom-right-radius: 25px;
-            box-shadow: 0 4px 24px #2b5a3b6e;
+            box-shadow: 0 4px 24px #8a634340;
         }
-        header h1 { margin: 0 0 8px 0; font-size: 2.4em; letter-spacing: 2px;}
-        header p { margin: 0; font-size: 1.1em; }
-        .container {
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+        }
+        header nav ul li {
+            margin: 0;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.17em;
+            transition: color .14s;
+            padding: 2px 10px;
+            border-radius: 4px;
+        }
+        header nav ul li a:hover {
+            color: var(--secondary-brown);
+            background: #fff5ee;
+        }
+        header h1 {
+            color: #fff;
+            font-size: 2.5em;
+            margin: 20px 0 12px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+        header p {
+            color: #fff;
+            font-size: 1.16em;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+        .section-container {
             max-width: 900px;
-            margin: 38px auto;
-            background: rgba(255,255,255,0.95);
-            border-radius: 16px;
-            padding: 30px 30px 38px 30px;
-            box-shadow: 0 6px 24px #b9e7bd;
+            margin: 44px auto;
+            background: #fff;
+            border-radius: 22px;
+            padding: 38px 20px 38px 20px;
+            box-shadow: 0 4px 24px #8a634340;
         }
-        h2 { color: #397d54; border-bottom: 1.5px solid #d3eed4; padding-bottom: 4px; }
-        table {
-            width: 100%; border-collapse: collapse; margin-top: 18px; background: #f6fcf8;
-            border-radius: 8px; overflow: hidden;
+        h2 {
+            color: var(--main-brown);
+            border-bottom: 1.5px solid var(--secondary-brown);
+            padding-bottom: 4px;
+            margin-top: 0;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 32px;
+            font-family: 'Georgia', serif;
         }
-        th, td { padding: 12px 8px; border-bottom: 1px solid #e3ece6; text-align: left; }
-        th { background: #e8f5ea; color: #397d54; font-weight: 600; }
-        .massage-list {
-            margin: 24px 0 10px 0;
-            padding-left: 20px;
+        .contact-info {
+            margin: 0 auto 22px auto;
+            max-width: 560px;
+            background: var(--light-beige);
+            border-radius: 14px;
+            padding: 18px 25px 21px 25px;
+            box-shadow: 0 2px 14px #b48a6840;
         }
-        .massage-list li {
-            margin-bottom: 9px;
-            font-size: 1.09em;
+        .contact-info p {
+            margin: 12px 0;
+            font-size: 1.13em;
+            text-align: center;
         }
-        .contact-section { margin-top: 42px; }
-        .contact-info { margin-bottom: 16px; }
-        .contact-info p { margin: 7px 0; font-size: 1.1em; }
-        .contact-links a { color: #397d54; text-decoration: underline; }
+        .contact-links a { color: var(--main-brown); text-decoration: underline; }
+        .contact-social {
+            margin-top: 14px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-social a {
+            display: inline-flex;
+            align-items: center;
+            color: var(--main-brown);
+            font-size: 1.23em;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .contact-social a:hover {
+            color: var(--secondary-brown);
+        }
+        .contact-social span {
+            font-size: 1.5em;
+            margin-right: 7px;
+        }
         .map {
-            margin-top: 36px;
+            margin-top: 30px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 12px #a2c8a7;
+            box-shadow: 0 2px 12px #b48a6840;
+            background: #f4f4f4;
+        }
+        .map h2 {
+            color: var(--main-brown);
+            margin-top: 0;
+            font-size: 1.1em;
+            border: none;
+            padding: 0;
+            text-align: center;
+        }
+        .textus-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+            background: var(--main-brown);
+            color: #fff;
+            border: 1.5px solid var(--main-brown);
+            border-radius: 6px;
+            box-shadow: 0 2px 18px #b48a6840;
+            padding: 13px 28px;
+            font-family: 'Georgia', serif;
+            font-size: 1.13em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.14s, color 0.14s, box-shadow 0.12s;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+        .textus-btn:hover {
+            background: #fff;
+            color: var(--main-brown);
+            border: 1.5px solid var(--main-brown);
         }
         @media (max-width: 700px) {
-            .container { padding: 12px 2vw 24px 2vw; }
+            .section-container {padding: 10px 2vw 18px 2vw;}
+            h2 {font-size: 1.2em;}
+            .contact-info {padding: 10px 5vw 15px 5vw;}
+            .textus-btn {padding: 8px 16px; font-size: .95em; bottom: 10px; right: 7px;}
+        }
+        @media (max-width: 430px) {
+            .contact-info {padding: 8px 2vw;}
+            .textus-btn {font-size: .91em;}
+        }
+        footer {
+            text-align:center;
+            padding:22px 0 10px 0;
+            color:var(--main-brown);
+            font-size: 1.04em;
         }
     </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Menú dinámico traducción
+        var navList = document.querySelector('header nav ul');
+        var menu = {
+            es: [
+                { text: "Inicio", href: "index.html" },
+                { text: "Masajes", href: "spa.html" },
+                { text: "Spa para Caballeros", href: "spa-caballeros.html" },
+                { text: "Nails Spa", href: "nails-spa.html" },
+                { text: "Salón", href: "salon.html" },
+                { text: "Contáctanos", href: "contacto.html" }
+            ],
+            en: [
+                { text: "Home", href: "index.html" },
+                { text: "Massages", href: "spa.html" },
+                { text: "Gentlemen's Spa", href: "spa-caballeros.html" },
+                { text: "Nails Spa", href: "nails-spa.html" },
+                { text: "Salon", href: "salon.html" },
+                { text: "Contact Us", href: "contacto.html" }
+            ]
+        };
+        var lang = navigator.language || navigator.userLanguage || 'es';
+        var isEn = lang.startsWith('en');
+        var menuLang = isEn ? menu.en : menu.es;
+        navList.innerHTML = "";
+        menuLang.forEach(function(item) {
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = item.href;
+            a.textContent = item.text;
+            li.appendChild(a);
+            navList.appendChild(li);
+        });
+
+        // Traducción textos principales
+        var h1 = document.querySelector('header h1');
+        var desc = document.querySelector('header p');
+        var h2 = document.querySelector('.section-container h2');
+        var footer = document.querySelector('footer p');
+        var textusBtn = document.getElementById('textus-btn');
+
+        if(isEn){
+            document.documentElement.lang = "en";
+            document.title = "Contact - Natur All";
+            h1.textContent = "Contact Natur All";
+            desc.textContent = "We're here to help you. Contact us for appointments, questions, or more information!";
+            h2.textContent = "Contact & Booking";
+            footer.textContent = "© 2025 Natur All. All rights reserved.";
+            if(textusBtn) textusBtn.textContent = "Text Us";
+            textusBtn.href = "https://wa.me/50487647340?text=Hello!%20I%20would%20like%20more%20information%20about%20Natur%20All.";
+            // Contacto
+            let contact = document.querySelectorAll('.contact-info p');
+            contact[0].innerHTML = "<strong>Phone:</strong> <a href=\"tel:+50487647340\" class=\"contact-links\">+504 8764-7340</a>";
+            contact[1].innerHTML = "<strong>WhatsApp:</strong> <a href=\"https://wa.me/50487647340?text=Hello!%20I%20would%20like%20to%20schedule%20an%20appointment%20or%20get%20more%20info.%20Thank%20you!\" class=\"contact-links\" target=\"_blank\">Message us on WhatsApp</a>";
+            contact[2].innerHTML = "<strong>Instagram:</strong> <a href=\"https://www.instagram.com/natur_all83/\" class=\"contact-links\" target=\"_blank\">@naturallhn</a>";
+            contact[3].innerHTML = "<strong>Address:</strong> La Placita Building, Tegucigalpa, Honduras";
+            contact[4].innerHTML = "<strong>Hours:</strong> Monday to Saturday, 8:00 AM – 6:00 PM";
+            contact[5].innerHTML = "<strong>Google Maps:</strong> <a href=\"https://maps.app.goo.gl/HUDmgae4HPJv7r268\" class=\"contact-links\" target=\"_blank\">View location</a>";
+            document.querySelector('.map h2').textContent = "Our Location";
+        } else {
+            document.documentElement.lang = "es";
+            document.title = "Contacto - Natur All";
+            h1.textContent = "Contacto Natur All";
+            desc.textContent = "Estamos aquí para ayudarte. Contáctanos para citas, dudas o más información.";
+            h2.textContent = "Contacto y Reservaciones";
+            footer.textContent = "© 2025 Natur All. Todos los derechos reservados.";
+            if(textusBtn) textusBtn.textContent = "Escríbenos";
+            textusBtn.href = "https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All.";
+            // Contacto
+            let contact = document.querySelectorAll('.contact-info p');
+            contact[0].innerHTML = "<strong>Teléfono:</strong> <a href=\"tel:+50487647340\" class=\"contact-links\">+504 8764-7340</a>";
+            contact[1].innerHTML = "<strong>WhatsApp:</strong> <a href=\"https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20agendar%20una%20cita%20o%20más%20información.%20Gracias!\" class=\"contact-links\" target=\"_blank\">Escríbenos por WhatsApp</a>";
+            contact[2].innerHTML = "<strong>Instagram:</strong> <a href=\"https://www.instagram.com/natur_all83/\" class=\"contact-links\" target=\"_blank\">@naturallhn</a>";
+            contact[3].innerHTML = "<strong>Dirección:</strong> Edificio La Placita, Tegucigalpa, Honduras";
+            contact[4].innerHTML = "<strong>Horario:</strong> Lunes a sábado, 8:00 AM – 6:00 PM";
+            contact[5].innerHTML = "<strong>Google Maps:</strong> <a href=\"https://maps.app.goo.gl/HUDmgae4HPJv7r268\" class=\"contact-links\" target=\"_blank\">Ver ubicación</a>";
+            document.querySelector('.map h2').textContent = "¿Dónde estamos?";
+        }
+    });
+    </script>
 </head>
 <body>
     <header>
-        <h1>Masajes Natur All</h1>
-        <p>Bienestar y relajación en Tegucigalpa · Reserva tu masaje hoy</p>
+        <nav>
+            <ul>
+                <!-- Menú dinámico -->
+            </ul>
+        </nav>
+        <h1>Contacto Natur All</h1>
+        <p>Estamos aquí para ayudarte. Contáctanos para citas, dudas o más información.</p>
     </header>
-    <div class="container">
-        <h2>Servicios y Precios</h2>
-        <table>
-            <tr>
-                <th>Tipo de Masaje</th>
-                <th>Duración</th>
-                <th>Precio</th>
-            </tr>
-            <tr>
-                <td>Masaje Relajante</td>
-                <td>60 min</td>
-                <td>L 700</td>
-            </tr>
-            <tr>
-                <td>Masaje Terapéutico</td>
-                <td>60 min</td>
-                <td>L 750</td>
-            </tr>
-            <tr>
-                <td>Masaje Deportivo</td>
-                <td>60 min</td>
-                <td>L 800</td>
-            </tr>
-            <tr>
-                <td>Masaje con Piedras Calientes</td>
-                <td>60 min</td>
-                <td>L 850</td>
-            </tr>
-            <tr>
-                <td>Reflexología Podal</td>
-                <td>45 min</td>
-                <td>L 600</td>
-            </tr>
-            <tr>
-                <td>Drenaje Linfático</td>
-                <td>60 min</td>
-                <td>L 900</td>
-            </tr>
-            <tr>
-                <td>Masaje Facial</td>
-                <td>45 min</td>
-                <td>L 650</td>
-            </tr>
-            <tr>
-                <td>Masaje en Pareja</td>
-                <td>60 min</td>
-                <td>L 1400</td>
-            </tr>
-        </table>
-
-        <h2>Nuestros Masajes</h2>
-        <ul class="massage-list">
-            <li><strong>Masaje Relajante:</strong> Ayuda a reducir el estrés y brinda una sensación de bienestar general.</li>
-            <li><strong>Masaje Terapéutico:</strong> Enfocado en aliviar tensiones musculares y dolores mediante técnicas especializadas.</li>
-            <li><strong>Masaje Deportivo:</strong> Ideal para deportistas o personas activas, mejora la flexibilidad y recuperación muscular.</li>
-            <li><strong>Masaje con Piedras Calientes:</strong> Combina técnicas manuales con piedras calientes para una relajación profunda.</li>
-            <li><strong>Reflexología Podal:</strong> Estimula puntos reflejos en los pies para promover la salud integral.</li>
-            <li><strong>Drenaje Linfático:</strong> Técnica suave que estimula el sistema linfático y ayuda a eliminar toxinas.</li>
-            <li><strong>Masaje Facial:</strong> Mejora la circulación y el tono de la piel, brindando una apariencia joven y relajada.</li>
-            <li><strong>Masaje en Pareja:</strong> Disfruta de una experiencia relajante acompañado en la misma sala.</li>
-        </ul>
-
-        <div class="contact-section">
-            <h2>Contacto y Reservaciones</h2>
-            <div class="contact-info">
-                <p><strong>Teléfono:</strong> <a href="tel:+50487647340" class="contact-links">+504 8764-7340</a></p>
-                <p><strong>WhatsApp:</strong> <a href="https://wa.me/50487647340?text=Buen%20día%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20masajes.%20Me%20gustaría%20recibir%20más%20información%2C%20por%20favor." class="contact-links" target="_blank">Escríbenos por WhatsApp</a></p>
-                <p><strong>Dirección:</strong> Edificio La Placita, Tegucigalpa, Honduras</p>
-                <p><strong>Horario:</strong> Lunes a sábado, 8:00 AM – 6:00 PM</p>
-                <p><strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/HUDmgae4HPJv7r268" class="contact-links" target="_blank">Ver ubicación</a></p>
+    <div class="section-container">
+        <h2>Contacto y Reservaciones</h2>
+        <div class="contact-info">
+            <p><strong>Teléfono:</strong> <a href="tel:+50487647340" class="contact-links">+504 8764-7340</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20agendar%20una%20cita%20o%20más%20información.%20Gracias!" class="contact-links" target="_blank">Escríbenos por WhatsApp</a></p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/natur_all83/" class="contact-links" target="_blank">@naturallhn</a></p>
+            <p><strong>Dirección:</strong> Edificio La Placita, Tegucigalpa, Honduras</p>
+            <p><strong>Horario:</strong> Lunes a sábado, 8:00 AM – 6:00 PM</p>
+            <p><strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/HUDmgae4HPJv7r268" class="contact-links" target="_blank">Ver ubicación</a></p>
+            <div class="contact-social">
+                <a href="https://wa.me/50487647340" target="_blank" title="WhatsApp"><span>💬</span>WhatsApp</a>
+                <a href="https://www.instagram.com/natur_all83/" target="_blank" title="Instagram"><span>📷</span>Instagram</a>
+                <a href="mailto:contact@naturallhn.com" target="_blank" title="Correo"><span>✉️</span>Email</a>
             </div>
         </div>
-
         <div class="map">
             <h2>¿Dónde estamos?</h2>
-            <!-- Google widget embed para la ubicación dada -->
-            <iframe 
+            <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.6830331984684!2d-87.18213742515128!3d14.083692389523456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fbd00394dc373%3A0x58f534e00a9fa34c!2sNatur%20All!5e1!3m2!1ses!2shn!4v1748022632238!5m2!1ses!2shn"
                 width="100%" height="260" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
+    <a href="https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All." 
+       class="textus-btn" id="textus-btn" target="_blank">
+        Escríbenos
+    </a>
+    <footer>
+        <p>&copy; 2025 Natur All. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
