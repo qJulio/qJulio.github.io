@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natur All Nails Spa</title>
+    <link rel="shortcut icon" href="images/Natur All Logo.png" type="image/x-icon">
+    <style>
+        :root {
+            --main-brown: #8a6343;
+            --secondary-brown: #b48a68;
+            --light-beige: #f4e6d7;
+            --dark-brown: #6b472b;
+            --text-brown: #432d1a;
+        }
+        body {
+            background: #fff;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-brown);
+        }
+        header {
+            background: var(--main-brown);
+            padding: 32px 0 20px 0;
+            text-align: center;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 4px 24px #8a634340;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+        }
+        header nav ul li {
+            margin: 0;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.18em;
+            transition: color .14s;
+            padding: 2px 8px;
+        }
+        header nav ul li a:hover {
+            color: var(--secondary-brown);
+        }
+        header h1 {
+            color: #fff;
+            font-size: 2.7em;
+            margin: 20px 0 12px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+        header p {
+            color: #fff;
+            font-size: 1.32em;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+        .section-container {
+            max-width: 1150px;
+            margin: 44px auto;
+            background: #fff;
+            border-radius: 22px;
+            padding: 38px 20px 38px 20px;
+        }
+        h2 {
+            color: var(--main-brown);
+            border-bottom: 1.5px solid var(--secondary-brown);
+            padding-bottom: 4px;
+            margin-top: 0;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 32px;
+            font-family: 'Georgia', serif;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 38px 38px;
+            margin-bottom: 44px;
+        }
+        .spa-card {
+            background: var(--light-beige);
+            border: none;
+            box-shadow: 0 2px 16px #b48a6840;
+            border-radius: 14px;
+            padding: 30px 26px 30px 26px;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            transition: box-shadow 0.18s, transform 0.14s;
+        }
+        .spa-card:hover {
+            box-shadow: 0 6px 30px #b48a6860;
+            transform: translateY(-3px) scale(1.015);
+        }
+        .spa-title {
+            font-family: 'Georgia', serif;
+            font-size: 1.35em;
+            font-weight: 400;
+            margin-bottom: 16px;
+            margin-top: 0;
+            letter-spacing: 0.1px;
+            color: var(--dark-brown);
+        }
+        .spa-desc {
+            font-size: 1.09em;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            margin-bottom: 14px;
+            line-height: 1.38;
+            color: var(--text-brown);
+        }
+        .spa-details {
+            font-family: 'Georgia', serif;
+            font-size: 1.04em;
+            font-style: italic;
+            margin-bottom: 24px;
+            color: var(--text-brown);
+        }
+        .reserve-btn {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            margin-top: auto;
+            padding: 13px 0;
+            background: var(--light-beige);
+            color: var(--main-brown);
+            border: 1.3px solid var(--main-brown);
+            border-radius: 0;
+            font-size: 1.07em;
+            letter-spacing: 0.04em;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.14s, color 0.14s;
+            text-decoration: none;
+        }
+        .reserve-btn:hover {
+            background: var(--main-brown);
+            color: #fff;
+        }
+        .textus-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+            background: var(--main-brown);
+            color: #fff;
+            border: 1.5px solid var(--main-brown);
+            border-radius: 6px;
+            box-shadow: 0 2px 18px #b48a6840;
+            padding: 13px 28px;
+            font-family: 'Georgia', serif;
+            font-size: 1.13em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.14s, color 0.14s, box-shadow 0.12s;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+        .textus-btn:hover {
+            background: #fff;
+            color: var(--main-brown);
+            border: 1.5px solid var(--main-brown);
+        }
+        @media (max-width: 1050px) {
+            .section-container {padding: 8px 2vw 18px 2vw;}
+            .services-grid {grid-template-columns: repeat(2, 1fr);}
+            .textus-btn {padding: 11px 22px; font-size: 1em; bottom: 18px; right: 12px;}
+        }
+        @media (max-width: 700px) {
+            .services-grid {grid-template-columns: 1fr;}
+            .spa-card {padding: 18px 7vw 18px 7vw;}
+            h2 {font-size: 1.2em;}
+            .textus-btn {padding: 8px 16px; font-size: .95em; bottom: 10px; right: 7px;}
+        }
+        @media (max-width: 430px) {
+            .spa-card {padding: 9vw 2vw;}
+            .textus-btn {font-size: .91em;}
+        }
+        footer {
+            text-align:center;
+            padding:22px 0 10px 0;
+            color:var(--main-brown);
+            font-size: 1.04em;
+        }
+    </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Menú dinámico traducción
+        var navList = document.querySelector('header nav ul');
+        var menu = {
+            es: [
+                { text: "Inicio", href: "index.html" },
+                { text: "Masajes", href: "spa.html" },
+                { text: "Spa para Caballeros", href: "spa-caballeros.html" },
+                { text: "Salón", href: "salon.html" },
+                { text: "Contáctanos", href: "contacto.html" }
+            ],
+            en: [
+                { text: "Home", href: "index.html" },
+                { text: "Massages", href: "spa.html" },
+                { text: "Gentlemen's Spa", href: "spa-caballeros.html" },
+                { text: "Salon", href: "salon.html" },
+                { text: "Contact Us", href: "contacto.html" }
+            ]
+        };
+        var lang = navigator.language || navigator.userLanguage || 'es';
+        var isEn = lang.startsWith('en');
+        var menuLang = isEn ? menu.en : menu.es;
+        navList.innerHTML = "";
+        menuLang.forEach(function(item) {
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = item.href;
+            a.textContent = item.text;
+            li.appendChild(a);
+            navList.appendChild(li);
+        });
+
+        // Servicio bilingüe
+        var services = [
+            {
+                es: ["Manicure Spa", "Incluye exfoliación, hidratación y masaje para manos.", "Duración: 40 min | Precio: L. 350"],
+                en: ["Spa Manicure", "Includes exfoliation, hydration and hand massage.", "Duration: 40 min | Price: L. 350"]
+            },
+            {
+                es: ["Manicure Normal", "Limpieza y corte para mantener uñas saludables.", "Duración: 25 min | Precio: L. 300"],
+                en: ["Standard Manicure", "Cleaning and trimming to keep nails healthy.", "Duration: 25 min | Price: L. 300"]
+            },
+            {
+                es: ["Pedicure Spa", "Relajación, exfoliación y cuidado integral para tus pies.", "Duración: 50 min | Precio: L. 480"],
+                en: ["Spa Pedicure", "Relaxation, exfoliation and full care for your feet.", "Duration: 50 min | Price: L. 480"]
+            },
+            {
+                es: ["Pedicure Normal", "Cuidado esencial para pies y uñas.", "Duración: 30 min | Precio: L. 400"],
+                en: ["Standard Pedicure", "Essential care for feet and nails.", "Duration: 30 min | Price: L. 400"]
+            },
+            {
+                es: ["Esmaltado en Gel", "Color duradero y brillo intenso por semanas.", "Duración: 45 min | Precio: L. 250"],
+                en: ["Gel Polish", "Long-lasting color and intense shine for weeks.", "Duration: 45 min | Price: L. 250"]
+            },
+            {
+                es: ["Esmaltado Regular", "Tu color favorito en acabado clásico.", "Duración: 30 min | Precio: L. 100"],
+                en: ["Regular Polish", "Your favorite color in a classic finish.", "Duration: 30 min | Price: L. 100"]
+            },
+            {
+                es: ["Esmaltado Semi Permanente", "Color resistente que se mantiene impecable.", "Duración: 40 min | Precio: L. 180"],
+                en: ["Semi-Permanent Polish", "Resistant color that stays flawless.", "Duration: 40 min | Price: L. 180"]
+            },
+            {
+                es: ["Uñas Acrílicas Naturales/French", "Estilo clásico y elegante.", "Duración: 90 min | Precio: L. 350"],
+                en: ["Natural/French Acrylic Nails", "Classic and elegant style.", "Duration: 90 min | Price: L. 350"]
+            },
+            {
+                es: ["Cover (Blanco, Rosado o Sand)", "Acabado uniforme y natural.", "Duración: 90 min | Precio: L. 450"],
+                en: ["Cover (White, Pink or Sand)", "Even and natural finish.", "Duration: 90 min | Price: L. 450"]
+            },
+            {
+                es: ["Calcio de Cuccio", "Fortalece tus uñas con calcio profesional.", "Duración: 90 min | Precio: L. 480"],
+                en: ["Cuccio Calcium", "Strengthen your nails with professional calcium.", "Duration: 90 min | Price: L. 480"]
+            },
+            {
+                es: ["Efecto Aurora", "Acabado iridiscente que brilla con la luz.", "Duración: 90 min | Precio: L. 490"],
+                en: ["Aurora Effect", "Iridescent finish that shines with the light.", "Duration: 90 min | Price: L. 490"]
+            },
+            {
+                es: ["Efecto Espejo", "Brillo espejo para un look sofisticado.", "Duración: 90 min | Precio: L. 520"],
+                en: ["Mirror Effect", "Mirror shine for a sophisticated look.", "Duration: 90 min | Price: L. 520"]
+            },
+            {
+                es: ["Efecto Ojo de Gato", "Diseño magnético con profundidad.", "Duración: 90 min | Precio: L. 550"],
+                en: ["Cat Eye Effect", "Magnetic design with depth.", "Duration: 90 min | Price: L. 550"]
+            },
+            {
+                es: ["Pedicure + Parafina", "Hidratación profunda con tratamiento de parafina.", "Duración: 60 min | Precio: L. 500"],
+                en: ["Pedicure + Paraffin", "Deep hydration with paraffin treatment.", "Duration: 60 min | Price: L. 500"]
+            },
+            {
+                es: ["Dry Manicure", "Manicura perfecta sin uso de agua.", "Duración: 30 min | Precio: L. 230"],
+                en: ["Dry Manicure", "Perfect manicure without water.", "Duration: 30 min | Price: L. 230"]
+            }
+        ];
+
+        var spaCards = document.querySelectorAll('.spa-card');
+        spaCards.forEach(function(card, i){
+            var svc = services[i][isEn ? "en" : "es"];
+            card.querySelector('.spa-title').textContent = svc[0];
+            card.querySelector('.spa-desc').textContent = svc[1];
+            card.querySelector('.spa-details').textContent = svc[2];
+            var btn = card.querySelector('.reserve-btn');
+            btn.textContent = (isEn ? "Book " : "Reservar ") + svc[0];
+            var msg = isEn
+                ? "Hello! I would like to book the service: " + svc[0]
+                : "Hola! Me gustaría reservar el servicio de: " + svc[0];
+            btn.href = "https://wa.me/50487647340?text=" + encodeURIComponent(msg);
+            btn.target = "_blank";
+        });
+
+        // Títulos y textos generales
+        var h1 = document.querySelector('header h1');
+        var desc = document.getElementById('nails-desc');
+        var h2 = document.querySelector('h2');
+        var footer = document.querySelector('footer p');
+        var textusBtn = document.getElementById('textus-btn');
+        if (isEn) {
+            document.documentElement.lang = "en";
+            document.title = "Natur All Nails Spa";
+            h1.textContent = "Natur All Nails Spa";
+            desc.textContent = "Nail wellness and beauty in Tegucigalpa · Book your appointment today";
+            h2.textContent = "Nails Spa Services";
+            footer.textContent = "© 2025 Natur All. All rights reserved.";
+            if (textusBtn) textusBtn.textContent = "Text Us";
+            textusBtn.href = "https://wa.me/50487647340?text=Hello!%20I%20would%20like%20more%20information%20about%20Natur%20All%20Nails%20Spa.";
+        } else {
+            document.documentElement.lang = "es";
+            document.title = "Natur All Nails Spa";
+            h1.textContent = "Natur All Nails Spa";
+            desc.textContent = "Bienestar y belleza de uñas en Tegucigalpa · Reserva tu cita hoy";
+            h2.textContent = "Servicios de Nails Spa";
+            footer.textContent = "© 2025 Natur All. Todos los derechos reservados.";
+            if (textusBtn) textusBtn.textContent = "Escríbenos";
+            textusBtn.href = "https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All%20Nails%20Spa.";
+        }
+    });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <!-- El menú será llenado dinámicamente -->
+            </ul>
+        </nav>
+        <h1>Natur All Nails Spa</h1>
+        <p id="nails-desc">Bienestar y belleza de uñas en Tegucigalpa · Reserva tu cita hoy</p>
+    </header>
+    <div class="section-container">
+        <div class="content-box">
+            <h2>Servicios de Nails Spa</h2>
+            <div class="services-grid">
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+                <div class="spa-card">
+                    <div>
+                        <div class="spa-title"></div>
+                        <div class="spa-desc"></div>
+                        <div class="spa-details"></div>
+                    </div>
+                    <a class="reserve-btn" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All%20Nails%20Spa." 
+       class="textus-btn" id="textus-btn" target="_blank">
+        Escríbenos
+    </a>
+    <footer>
+        <p>&copy; 2025 Natur All. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
