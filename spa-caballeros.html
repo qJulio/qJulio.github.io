@@ -3,49 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Spa - Natur All</title>
+    <link rel="shortcut icon" href="images/Natur All Logo.png" type="image/x-icon">
     <style>
-        .back-button {
-            display: inline-block;
-            margin: 20px 0;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #ffac62; /* Color beige oscuro */
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
+        :root {
+            --main-brown: #8a6343;
+            --secondary-brown: #b48a68;
+            --light-beige: #f4e6d7;
+            --dark-brown: #6b472b;
+            --text-brown: #432d1a;
+        }
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            color: var(--text-brown);
+            background: var(--light-beige);
+        }
+        header {
+            background: var(--main-brown);
+            padding: 32px 0 24px 0;
             text-align: center;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 4px 24px #8a634340;
         }
-        .back-button:hover {
-            background-color: #ff9435; /* Color más oscuro al pasar el mouse */
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+        }
+        header nav ul li { margin:0; }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.15em;
+            font-family: 'Georgia', serif;
+            transition: color .14s;
+            padding: 2px 10px;
+            border-radius: 5px;
+        }
+        header nav ul li a:hover {
+            background: var(--light-beige);
+            color: var(--main-brown);
+        }
+        header h1 {
+            color: #fff;
+            font-size: 2.5em;
+            margin: 20px 0 12px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+        header p {
+            color: #fff;
+            font-size: 1.15em;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+        .section-container {
+            max-width: 950px;
+            margin: 36px auto;
+            background: #fff;
+            border-radius: 18px;
+            padding: 32px 18px 32px 18px;
+            box-shadow: 0 6px 28px #b48a6840;
+        }
+        .content-box h2 {
+            color: var(--main-brown);
+            border-bottom: 1.5px solid var(--secondary-brown);
+            padding-bottom: 4px;
+            font-family: 'Georgia', serif;
+        }
+        .content-box h3 {
+            color: var(--dark-brown);
+            margin-top: 32px;
+            font-family: 'Georgia', serif;
+        }
+        .treatments-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin: 18px 0 10px 0;
+        }
+        .treatment-item {
+            background: var(--light-beige);
+            border: 1.5px solid var(--secondary-brown);
+            border-radius: 14px;
+            box-shadow: 0 2px 10px #b48a6840;
+            padding: 18px 14px 15px 14px;
+            flex: 1 1 220px;
+            min-width: 220px;
+            max-width: 290px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform .13s, box-shadow .13s, border-color .13s;
+        }
+        .treatment-item:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 24px #b48a6860;
+            border-color: var(--main-brown);
+        }
+        .treatment-item img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 9px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px #b48a6870;
+        }
+        .treatment-item h4 {
+            margin: 8px 0 6px 0;
+            color: var(--main-brown);
+            font-family: 'Georgia', serif;
+        }
+        .treatment-item p {
+            margin: 0 0 7px 0;
+            font-size: 1em;
+            font-family: 'Georgia', serif;
+            color: var(--text-brown);
+        }
+        .reserve-btn {
+            display: block;
+            width: 100%;
+            margin-top: 13px;
+            padding: 11px 0;
+            background: var(--light-beige);
+            color: var(--main-brown);
+            border: 1.3px solid var(--main-brown);
+            border-radius: 0;
+            font-size: 1.07em;
+            letter-spacing: 0.04em;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.14s, color 0.14s;
+            text-decoration: none;
+        }
+        .reserve-btn:hover {
+            background: var(--main-brown);
+            color: #fff;
+        }
+        /* Floating Text Us Button */
+        .textus-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+            background: var(--main-brown);
+            color: #fff;
+            border: 1.5px solid var(--main-brown);
+            border-radius: 6px;
+            box-shadow: 0 2px 18px #b48a6840;
+            padding: 13px 28px;
+            font-family: 'Georgia', serif;
+            font-size: 1.13em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.14s, color 0.14s, box-shadow 0.12s;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+        .textus-btn:hover {
+            background: #fff;
+            color: var(--main-brown);
+        }
+        @media (max-width: 850px) {
+            .section-container {padding: 12px 2vw 16px 2vw;}
+            .treatments-list { flex-direction: column; gap: 16px;}
+            .treatment-item { min-width: 0; max-width: 100%;}
+        }
+        @media (max-width: 700px) {
+            .textus-btn {padding: 8px 16px; font-size: .95em; bottom: 10px; right: 7px;}
+        }
+        @media (max-width: 430px) {
+            .treatment-item {padding: 9vw 2vw;}
+            .textus-btn {font-size: .91em;}
+        }
+        footer {
+            text-align: center;
+            color: var(--main-brown);
+            padding: 18px 0 10px 0;
+            margin-top: 24px;
+            font-family: 'Georgia', serif;
         }
     </style>
-<head>
-    <style>
-        /* Estilo para el enlace del título */
-        h1 a {
-            color: inherit; /* Hereda el color del texto del título */
-            text-decoration: none; /* Elimina el subrayado */
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // MENÚ dinámico (Home, Gentlemen's Spa, Nails Spa, Salon, Contact Us)
+        var lang = navigator.language || navigator.userLanguage || 'es';
+        var navOrder = [
+            {en:"Home", es:"Inicio", href:"index.html"},
+            {en:"Massages", es:"Masajes", href:"spa.html"},
+            {en:"Nails Spa", es:"Nails Spa", href:"nails-spa.html"},
+            {en:"Salon", es:"Salón", href:"salon.html"},
+            {en:"Contact Us", es:"Contáctanos", href:"contacto.html"}
+        ];
+        var navUl = document.querySelector("header nav ul");
+        navUl.innerHTML = "";
+        navOrder.forEach(function(item){
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = item.href;
+            a.textContent = (lang && lang.startsWith("en")) ? item.en : item.es;
+            li.appendChild(a);
+            navUl.appendChild(li);
+        });
+
+        // Traducción de secciones y tratamientos
+        function setLang(lang) {
+            var h2 = document.querySelector('.content-box h2');
+            var h3s = document.querySelectorAll('.content-box h3');
+            var footer = document.querySelector('footer p');
+            var btnText = lang.startsWith('en') ? "Book " : "Reservar ";
+
+            // Masajes
+            var massageTitles = [
+                "Manicure Spa",
+                "Pedicure Spa",
+                "Masaje Relajante con Aromaterapia",
+                "Masaje Geotermal",
+                "Masaje Terapéutico",
+                "Masaje Reductivo",
+                "Masaje Drenaje Linfático"
+            ];
+            var massageTitlesEn = [
+                "Manicure Spa",
+                "Pedicure Spa",
+                "Relaxing Massage with Aromatherapy",
+                "Hot Stone Massage",
+                "Therapeutic Massage",
+                "Slimming Massage",
+                "Lymphatic Drainage Massage"
+            ];
+            var massageDescs = [
+                "Un tratamiento relajante que exfolia e hidrata tus manos.",
+                "Un tratamiento revitalizante que exfolia e hidrata tus pies, dejándolos suaves y frescos.",
+                "Un tratamiento que combina técnicas de masaje con aceites esenciales para promover la relajación.",
+                "Masaje que utiliza piedras calientes para aliviar tensiones y mejorar la circulación.",
+                "Enfocado en aliviar dolores musculares y tensiones acumuladas.",
+                "Diseñado para reducir medidas y mejorar la apariencia de la piel.",
+                "Ayuda a eliminar toxinas y mejorar la circulación linfática."
+            ];
+            var massageDescsEn = [
+                "A relaxing treatment that exfoliates and hydrates your hands.",
+                "A revitalizing treatment that exfoliates and hydrates your feet, leaving them soft and fresh.",
+                "A treatment that combines massage techniques with essential oils to promote relaxation.",
+                "Massage using hot stones to relieve tension and improve circulation.",
+                "Focused on relieving muscle pain and accumulated tension.",
+                "Designed to reduce measurements and improve the appearance of the skin.",
+                "Helps remove toxins and improve lymphatic circulation."
+            ];
+            // Terapias
+            var therapyTitles = [
+                "Terapia de Termogénesis",
+                "Baño de Luna",
+                "Limpieza Facial Profunda",
+                "Depilación con Cera",
+                "Exfoliaciones Corporales",
+                "Mascarillas a Base de Productos Naturales"
+            ];
+            var therapyTitlesEn = [
+                "Thermogenesis Therapy",
+                "Moon Bath",
+                "Deep Facial Cleansing",
+                "Waxing",
+                "Body Exfoliation",
+                "Natural Product Masks"
+            ];
+            var therapyDescs = [
+                "Un tratamiento que estimula el metabolismo y la quema de grasa.",
+                "Es un tratamiento aclarante de la piel para dar luminosidad.",
+                "Tratamiento que purifica y revitaliza la piel del rostro.",
+                "Eliminación del vello corporal para una piel suave y libre de irritaciones.",
+                "Elimina las células muertas de la piel, dejándola suave y radiante.",
+                "Tratamientos que nutren e hidratan la piel utilizando ingredientes naturales."
+            ];
+            var therapyDescsEn = [
+                "A treatment that stimulates metabolism and fat burning.",
+                "A skin lightening treatment for a luminous appearance.",
+                "Treatment that purifies and revitalizes the facial skin.",
+                "Body hair removal for smooth and irritation-free skin.",
+                "Removes dead skin cells, leaving it soft and radiant.",
+                "Treatments that nourish and hydrate the skin using natural ingredients."
+            ];
+
+            // Añadir o actualizar botones de reserva en cada servicio
+            var massages = document.querySelectorAll('section:nth-of-type(1) .treatment-item');
+            for(let i=0; i<massages.length; i++) {
+                massages[i].querySelector('h4').textContent = lang.startsWith('en') ? massageTitlesEn[i] : massageTitles[i];
+                massages[i].querySelector('p').textContent = lang.startsWith('en') ? massageDescsEn[i] : massageDescs[i];
+                let btn = massages[i].querySelector('.reserve-btn');
+                if(!btn) {
+                    btn = document.createElement('a');
+                    btn.className = 'reserve-btn';
+                    massages[i].appendChild(btn);
+                }
+                let serviceName = lang.startsWith('en') ? massageTitlesEn[i] : massageTitles[i];
+                btn.textContent = btnText + serviceName;
+                let msg = lang.startsWith('en')
+                  ? "Hello! I would like to book the service: " + serviceName
+                  : "Hola! Me gustaría reservar el servicio de: " + serviceName;
+                btn.href = "https://wa.me/50487647340?text=" + encodeURIComponent(msg);
+                btn.target = "_blank";
+            }
+            var therapies = document.querySelectorAll('section:nth-of-type(2) .treatment-item');
+            for(let i=0; i<therapies.length; i++) {
+                therapies[i].querySelector('h4').textContent = lang.startsWith('en') ? therapyTitlesEn[i] : therapyTitles[i];
+                therapies[i].querySelector('p').textContent = lang.startsWith('en') ? therapyDescsEn[i] : therapyDescs[i];
+                let btn = therapies[i].querySelector('.reserve-btn');
+                if(!btn) {
+                    btn = document.createElement('a');
+                    btn.className = 'reserve-btn';
+                    therapies[i].appendChild(btn);
+                }
+                let serviceName = lang.startsWith('en') ? therapyTitlesEn[i] : therapyTitles[i];
+                btn.textContent = btnText + serviceName;
+                let msg = lang.startsWith('en')
+                  ? "Hello! I would like to book the service: " + serviceName
+                  : "Hola! Me gustaría reservar el servicio de: " + serviceName;
+                btn.href = "https://wa.me/50487647340?text=" + encodeURIComponent(msg);
+                btn.target = "_blank";
+            }
+
+            if(lang.startsWith('en')) {
+                document.documentElement.lang = "en";
+                document.title = "Spa - Natur All";
+                h2.textContent = "Our Spa Services for Gentlemen";
+                h3s[0].textContent = "Massages";
+                h3s[1].textContent = "Therapies";
+                footer.textContent = "© 2024 Natur All. All rights reserved.";
+                document.getElementById('spa-desc').textContent = "Wellness and relaxation in Tegucigalpa · Book your massage today";
+            } else {
+                document.documentElement.lang = "es";
+                document.title = "Spa - Natur All";
+                h2.textContent = "Nuestros Servicios de Spa para Caballeros";
+                h3s[0].textContent = "Masajes";
+                h3s[1].textContent = "Terapias";
+                footer.textContent = "© 2024 Natur All. Todos los derechos reservados.";
+                document.getElementById('spa-desc').textContent = "Bienestar y relajación en Tegucigalpa · Reserva tu masaje hoy";
+            }
         }
-    </style>
+        setLang(lang);
+
+        // Botón flotante WhatsApp
+        var textBtn = document.createElement("a");
+        textBtn.className = "textus-btn";
+        textBtn.id = "textus-btn";
+        if(lang && lang.startsWith('en')) {
+            textBtn.textContent = "Text Us";
+            textBtn.href = "https://wa.me/50487647340?text=Hello!%20I'd%20like%20more%20information%20about%20Natur%20All%20Spa.";
+        } else {
+            textBtn.textContent = "Escríbenos";
+            textBtn.href = "https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All%20Spa.";
+        }
+        textBtn.target = "_blank";
+        document.body.appendChild(textBtn);
+    });
+    </script>
 </head>
 <body>
     <header>
         <nav>
-        <h1><a href="index.html">Natur All</a></h1>
             <ul>
-                <li><a href="spa.html">Spa</a></li>
-                <li><a href="salon.html">Salon</a></li>
-                <li><a href="contacto.html">Contáctanos</a></li>
-                <li><a href="promos.html">Promociones</a></li>
+                <!-- El menú se genera por JS según idioma -->
             </ul>
         </nav>
+        <h1>Natur All Massage</h1>
+        <p id="spa-desc">Bienestar y relajación en Tegucigalpa · Reserva tu masaje hoy</p>
     </header>
-
-        <!-- Botón para volver a inicio -->
-        <a href="index.html" class="back-button">Volver a Inicio</a>
 
     <div class="section-container">
         <div class="content-box">
@@ -54,18 +385,17 @@
             <!-- Sección de Masajes -->
             <section>
                 <h3>Masajes</h3>
-                <div class="treatment-item">
-                    <img src="images/manicure spa hombres.jpg" alt="Manicure Spa">
-                    <h4>Manicure Spa</h4>
-                    <p>Un tratamiento relajante que exfolia e hidrata tus manos.</p>
-                </div>
-                <div class="treatment-item">
-                    <img src="images/pedicure spa hombres.jpeg" alt="Pedicure Spa">
-                    <h4>Pedicure Spa</h4>
-                    <p>Un tratamiento revitalizante que exfolia e hidrata tus pies, dejándolos suaves y frescos.
-                    </p>
-                </div>
                 <div class="treatments-list">
+                    <div class="treatment-item">
+                        <img src="images/manicure spa hombres.jpg" alt="Manicure Spa">
+                        <h4>Manicure Spa</h4>
+                        <p>Un tratamiento relajante que exfolia e hidrata tus manos.</p>
+                    </div>
+                    <div class="treatment-item">
+                        <img src="images/pedicure spa hombres.jpeg" alt="Pedicure Spa">
+                        <h4>Pedicure Spa</h4>
+                        <p>Un tratamiento revitalizante que exfolia e hidrata tus pies, dejándolos suaves y frescos.</p>
+                    </div>
                     <div class="treatment-item">
                         <img src="images/Masaje Relajante con Aromaterapia Hombres.jpg" alt="Masaje Relajante">
                         <h4>Masaje Relajante con Aromaterapia</h4>
@@ -109,7 +439,7 @@
                         <p>Es un tratamiento aclarante de la piel para dar luminosidad.</p>
                     </div>
                     <div class="treatment-item">
-                        <img src="images/facial_limpieaza_profunda_hombre.jpg"Limpieza Facial Profunda">
+                        <img src="images/facial_limpieaza_profunda_hombre.jpg" alt="Limpieza Facial Profunda">
                         <h4>Limpieza Facial Profunda</h4>
                         <p>Tratamiento que purifica y revitaliza la piel del rostro.</p>
                     </div>
@@ -134,34 +464,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Natur All. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Natur All. Todos los derechos reservados.</p>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('fade', 'show'); // Agrega las clases cuando la página se ha cargado
-        });
-
-        const links = document.querySelectorAll('nav a'); // Selecciona los enlaces del nav
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevenir el comportamiento predeterminado
-                const href = this.getAttribute('href');
-                document.body.classList.remove('show'); // Remueve la clase de visualización
-                setTimeout(() => {
-                    window.location.href = href; // Redirigir después de la animación
-                }, 500); // Tiempo de espera para que coincida con la duración de la animación
-            });
-        });
-    </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17108974154"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17108974154');
-</script>
 </body>
 </html>
