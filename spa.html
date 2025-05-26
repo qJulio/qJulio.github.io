@@ -6,26 +6,30 @@
     <meta name="description" content="Reserva tu masaje en Natur All. Consulta precios, servicios y contáctanos para agendar tu cita en Tegucigalpa.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        :root {
+            --main-brown: #8a6343;
+            --secondary-brown: #b48a68;
+            --light-beige: #f4e6d7;
+            --dark-brown: #6b472b;
+            --text-brown: #432d1a;
+        }
         body {
             margin:0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: #333;
-            background: 
-                linear-gradient(rgba(34, 52, 36, 0.56), rgba(34, 52, 36, 0.72)),
-                url('images/fondo-pestanas.jpg') no-repeat center center fixed;
-            background-size: cover;
+            font-family: 'Georgia', serif;
+            color: var(--text-brown);
+            background: var(--light-beige);
         }
         header {
-            background: rgba(57, 125, 84, 0.90);
+            background: var(--main-brown);
             color: #fff;
             padding: 32px 0 24px 0;
             text-align: center;
             border-bottom-left-radius: 25px;
             border-bottom-right-radius: 25px;
-            box-shadow: 0 4px 24px #2b5a3b6e;
+            box-shadow: 0 4px 24px #8a634340;
         }
-        header h1 { margin: 0 0 8px 0; font-size: 2.2em; letter-spacing: 2px;}
-        header p { margin: 0; font-size: 1.1em; }
+        header h1 { margin: 0 0 8px 0; font-size: 2.2em; letter-spacing: 2px; font-family: 'Georgia', serif;}
+        header p { margin: 0; font-size: 1.1em; font-family: 'Georgia', serif;}
         nav ul {
             list-style: none;
             margin: 0;
@@ -33,34 +37,37 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 18px;
+            gap: 26px;
         }
         nav ul li { margin:0; }
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.08em;
+            font-size: 1.19em;
+            font-family: 'Georgia', serif;
             transition: color .13s;
-            padding: 2px 5px;
+            padding: 2px 10px;
+            border-radius: 5px;
         }
         nav ul li a:hover {
-            color: #ffac62;
+            background: var(--light-beige);
+            color: var(--main-brown);
         }
         .container {
             max-width: 900px;
             margin: 38px auto;
-            background: rgba(255,255,255,0.95);
+            background: #fff;
             border-radius: 16px;
             padding: 30px 16px 38px 16px;
-            box-shadow: 0 6px 24px #b9e7bd;
+            box-shadow: 0 6px 24px #b48a6840;
         }
-        h2 { color: #397d54; border-bottom: 1.5px solid #d3eed4; padding-bottom: 4px; }
+        h2 { color: var(--main-brown); border-bottom: 1.5px solid var(--secondary-brown); padding-bottom: 4px; font-family: 'Georgia', serif;}
         table {
             width: 100%; border-collapse: collapse; margin-top: 18px; background: #f6fcf8;
             border-radius: 8px; overflow: hidden;
         }
-        th, td { padding: 12px 8px; border-bottom: 1px solid #e3ece6; text-align: left; }
-        th { background: #e8f5ea; color: #397d54; font-weight: 600; }
+        th, td { padding: 12px 8px; border-bottom: 1px solid #e3ece6; text-align: left; font-family: 'Georgia', serif;}
+        th { background: #e8f5ea; color: var(--main-brown); font-weight: 600; }
         .massage-list {
             margin: 24px 0 10px 0;
             padding-left: 20px;
@@ -69,38 +76,244 @@
             margin-bottom: 9px;
             font-size: 1.09em;
         }
+        .massage-list strong {
+            font-weight: bold;
+            color: var(--main-brown);
+        }
         .contact-section { margin-top: 42px; }
         .contact-info { margin-bottom: 16px; }
         .contact-info p { margin: 7px 0; font-size: 1.1em; }
-        .contact-links a { color: #397d54; text-decoration: underline; }
+        .contact-links a { color: var(--main-brown); text-decoration: underline; }
         .map {
             margin-top: 36px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 12px #a2c8a7;
+            box-shadow: 0 2px 12px #b48a6840;
+            position: relative;
+            padding-top: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .map-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        .map-header-row h2 {
+            margin: 0 0 0 10px;
+            font-size: 1.1em;
+            color: var(--main-brown);
+            border: none;
+            padding: 0;
+            flex: 1 1 auto;
+        }
+        .map-action-btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.93);
+            color: var(--main-brown);
+            border: 1.5px solid var(--secondary-brown);
+            border-radius: 6px;
+            padding: 10px 18px;
+            font-size: 1.09em;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 3;
+            box-shadow: 0 2px 8px #b48a6840;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: background 0.13s, color 0.13s;
+        }
+        .map-action-btn:hover {
+            background: var(--main-brown);
+            color: #fff;
+        }
+        /* Floating Text Us Button */
+        .textus-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+            background: var(--main-brown);
+            color: #fff;
+            border: 1.5px solid var(--main-brown);
+            border-radius: 6px;
+            box-shadow: 0 2px 18px #b48a6840;
+            padding: 13px 28px;
+            font-family: 'Georgia', serif;
+            font-size: 1.13em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.14s, color 0.14s, box-shadow 0.12s;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+        .textus-btn:hover {
+            background: #fff;
+            color: var(--main-brown);
+            border: 1.5px solid var(--main-brown);
         }
         @media (max-width: 700px) {
             header h1 { font-size: 1.25em; }
             .container { padding: 12px 2vw 24px 2vw; }
             table th, table td { padding: 8px 2px; }
             nav ul { gap: 8px; }
+            .map-header-row h2 { font-size: 1em; }
+            .map-action-btn { font-size: .98em; padding: 8px 10px; margin-right: 4px;}
+            .textus-btn {padding: 8px 16px; font-size: .95em; bottom: 10px; right: 7px;}
+        }
+        @media (max-width: 430px) {
+            .textus-btn {font-size: .91em;}
         }
     </style>
     <script>
-    // Traducción automática según idioma del navegador
     document.addEventListener("DOMContentLoaded", function() {
+        // MENÚ: Home, Gentlemen's Spa, Nails Spa, Salon, Contact Us (sin SPA)
         var lang = navigator.language || navigator.userLanguage;
-        if(lang && lang.startsWith('en')) {
+        var navOrder = [
+            {en:"Home", es:"Inicio", href:"index.html"},
+            {en:"Gentlemen's Spa", es:"Spa para Caballeros", href:"spa-caballeros.html"},
+            {en:"Nails Spa", es:"Nails Spa", href:"natur-all-nails-spa.html"},
+            {en:"Salon", es:"Salón", href:"salon.html"},
+            {en:"Contact Us", es:"Contáctanos", href:"contacto.html"}
+        ];
+        var navUl = document.querySelector("nav ul");
+        navUl.innerHTML = "";
+        navOrder.forEach(function(item){
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = item.href;
+            a.textContent = (lang && lang.startsWith("en")) ? item.en : item.es;
+            li.appendChild(a);
+            navUl.appendChild(li);
+        });
+
+        // Traducción automática según idioma del navegador
+        // Traducción de tabla y lista de masajes
+        var massagesES = [
+            {
+                name: "Masaje Relajante",
+                duration: "60 min",
+                price: "L 700",
+                desc: "<strong>Masaje Relajante:</strong> Ayuda a reducir el estrés y brinda una sensación de bienestar general."
+            },
+            {
+                name: "Masaje Terapéutico",
+                duration: "60 min",
+                price: "L 750",
+                desc: "<strong>Masaje Terapéutico:</strong> Enfocado en aliviar tensiones musculares y dolores mediante técnicas especializadas."
+            },
+            {
+                name: "Masaje Deportivo",
+                duration: "60 min",
+                price: "L 800",
+                desc: "<strong>Masaje Deportivo:</strong> Ideal para deportistas o personas activas, mejora la flexibilidad y recuperación muscular."
+            },
+            {
+                name: "Masaje con Piedras Calientes",
+                duration: "60 min",
+                price: "L 850",
+                desc: "<strong>Masaje con Piedras Calientes:</strong> Combina técnicas manuales con piedras calientes para una relajación profunda."
+            },
+            {
+                name: "Reflexología Podal",
+                duration: "45 min",
+                price: "L 600",
+                desc: "<strong>Reflexología Podal:</strong> Estimula puntos reflejos en los pies para promover la salud integral."
+            },
+            {
+                name: "Drenaje Linfático",
+                duration: "60 min",
+                price: "L 900",
+                desc: "<strong>Drenaje Linfático:</strong> Técnica suave que estimula el sistema linfático y ayuda a eliminar toxinas."
+            },
+            {
+                name: "Masaje Facial",
+                duration: "45 min",
+                price: "L 650",
+                desc: "<strong>Masaje Facial:</strong> Mejora la circulación y el tono de la piel, brindando una apariencia joven y relajada."
+            },
+            {
+                name: "Masaje en Pareja",
+                duration: "60 min",
+                price: "L 1400",
+                desc: "<strong>Masaje en Pareja:</strong> Disfruta de una experiencia relajante acompañado en la misma sala."
+            }
+        ];
+        var massagesEN = [
+            {
+                name: "Relaxing Massage",
+                duration: "60 min",
+                price: "L 700",
+                desc: "<strong>Relaxing Massage:</strong> Helps reduce stress and provides an overall feeling of wellness."
+            },
+            {
+                name: "Therapeutic Massage",
+                duration: "60 min",
+                price: "L 750",
+                desc: "<strong>Therapeutic Massage:</strong> Focused on relieving muscle tension and pain through specialized techniques."
+            },
+            {
+                name: "Sports Massage",
+                duration: "60 min",
+                price: "L 800",
+                desc: "<strong>Sports Massage:</strong> Ideal for athletes or active people, improves flexibility and muscle recovery."
+            },
+            {
+                name: "Hot Stone Massage",
+                duration: "60 min",
+                price: "L 850",
+                desc: "<strong>Hot Stone Massage:</strong> Combines manual techniques with hot stones for deep relaxation."
+            },
+            {
+                name: "Foot Reflexology",
+                duration: "45 min",
+                price: "L 600",
+                desc: "<strong>Foot Reflexology:</strong> Stimulates reflex points on the feet to promote integral health."
+            },
+            {
+                name: "Lymphatic Drainage",
+                duration: "60 min",
+                price: "L 900",
+                desc: "<strong>Lymphatic Drainage:</strong> Gentle technique that stimulates the lymphatic system and helps eliminate toxins."
+            },
+            {
+                name: "Facial Massage",
+                duration: "45 min",
+                price: "L 650",
+                desc: "<strong>Facial Massage:</strong> Improves circulation and skin tone, giving a youthful and relaxed appearance."
+            },
+            {
+                name: "Couples Massage",
+                duration: "60 min",
+                price: "L 1400",
+                desc: "<strong>Couples Massage:</strong> Enjoy a relaxing experience together in the same room."
+            }
+        ];
+
+        var isEN = lang && lang.startsWith('en');
+        var massages = isEN ? massagesEN : massagesES;
+
+        // Tabla de servicios
+        var table = document.querySelector("table");
+        var tbody = "";
+        massages.forEach(function(m){
+            tbody += "<tr><td>" + m.name + "</td><td>" + m.duration + "</td><td>" + m.price + "</td></tr>";
+        });
+        table.innerHTML = "<tr><th>"+(isEN?"Type of Massage":"Tipo de Masaje")+"</th><th>"+(isEN?"Duration":"Duración")+"</th><th>"+(isEN?"Price":"Precio")+"</th></tr>" + tbody;
+
+        // Lista de masajes (descripciones)
+        var massageList = document.querySelector(".massage-list");
+        massageList.innerHTML = massages.map(m => "<li>"+m.desc+"</li>").join("");
+
+        // Resto de traducción
+        if(isEN) {
             document.documentElement.lang = "en";
             document.title = "Massage Services & Contact | Natur All";
             document.querySelector("header h1").textContent = "Natur All Massage";
             document.querySelector("header p").textContent = "Wellness and relaxation in Tegucigalpa · Book your massage today";
-            // Nav traducción
-            var navLinks = document.querySelectorAll("nav ul li a");
-            navLinks[0].textContent = "Salon";
-            navLinks[1].textContent = "Gentlemen's Spa";
-            navLinks[2].textContent = "Promotions";
-            // Secciones
             document.querySelectorAll("h2")[0].textContent = "Services & Prices";
             document.querySelectorAll("h2")[1].textContent = "Our Massages";
             document.querySelectorAll("h2")[2].textContent = "Contact & Bookings";
@@ -109,42 +322,38 @@
             document.querySelector(".contact-info p:nth-child(3)").innerHTML = '<strong>Address:</strong> La Placita Building, Tegucigalpa, Honduras';
             document.querySelector(".contact-info p:nth-child(4)").innerHTML = '<strong>Hours:</strong> Monday to Saturday, 8:00 AM – 6:00 PM';
             document.querySelector(".contact-info p:nth-child(5)").innerHTML = '<strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/HUDmgae4HPJv7r268" class="contact-links" target="_blank">View location</a>';
-            document.querySelector(".map h2").textContent = "Our Location";
-            // Tabla
-            var ths = document.querySelectorAll("table th");
-            ths[0].textContent = "Massage Type";
-            ths[1].textContent = "Duration";
-            ths[2].textContent = "Price";
-            var massages = [
-                ["Relaxing Massage", "60 min", "L 700"],
-                ["Therapeutic Massage", "60 min", "L 750"],
-                ["Sports Massage", "60 min", "L 800"],
-                ["Hot Stones Massage", "60 min", "L 850"],
-                ["Foot Reflexology", "45 min", "L 600"],
-                ["Lymphatic Drainage", "60 min", "L 900"],
-                ["Facial Massage", "45 min", "L 650"],
-                ["Couple's Massage", "60 min", "L 1400"]
-            ];
-            var trs = document.querySelectorAll("table tr");
-            for(let i=1; i<massages.length+1; i++) {
-                trs[i].children[0].textContent = massages[i-1][0];
-                trs[i].children[1].textContent = massages[i-1][1];
-                trs[i].children[2].textContent = massages[i-1][2];
-            }
-            // Lista de masajes
-            var massageList = [
-                "<strong>Relaxing Massage:</strong> Helps to reduce stress and provides a sensation of general wellbeing.",
-                "<strong>Therapeutic Massage:</strong> Focused on muscle tension and pain relief using specialized techniques.",
-                "<strong>Sports Massage:</strong> For athletes or active people, improves flexibility and muscle recovery.",
-                "<strong>Hot Stones Massage:</strong> Combines manual techniques with heated stones for deep relaxation.",
-                "<strong>Foot Reflexology:</strong> Stimulates reflex points on the feet to promote overall health.",
-                "<strong>Lymphatic Drainage:</strong> Gentle technique to boost the lymphatic system and eliminate toxins.",
-                "<strong>Facial Massage:</strong> Improves circulation and skin tone, providing a youthful and relaxed appearance.",
-                "<strong>Couple's Massage:</strong> Enjoy a relaxing experience together in the same room."
-            ];
-            var lis = document.querySelectorAll(".massage-list li");
-            for(let i=0; i<lis.length; i++) lis[i].innerHTML = massageList[i];
+            document.querySelector(".map-header-row h2").textContent = "Our Location";
+            document.querySelector(".map-action-btn").textContent = "Get Directions";
+        } else {
+            document.documentElement.lang = "es";
+            document.title = "Servicios de Masaje & Contacto | Natur All";
+            document.querySelector("header h1").textContent = "Natur All Masajes";
+            document.querySelector("header p").textContent = "Bienestar y relajación en Tegucigalpa · Reserva tu masaje hoy";
+            document.querySelectorAll("h2")[0].textContent = "Servicios y Precios";
+            document.querySelectorAll("h2")[1].textContent = "Nuestros Masajes";
+            document.querySelectorAll("h2")[2].textContent = "Contacto y Reservaciones";
+            document.querySelector(".contact-info p:nth-child(1)").innerHTML = '<strong>Teléfono:</strong> <a href="tel:+50487647340" class="contact-links">+504 8764-7340</a>';
+            document.querySelector(".contact-info p:nth-child(2)").innerHTML = '<strong>WhatsApp:</strong> <a href="https://wa.me/50487647340?text=Buen%20día%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20masajes.%20Me%20gustaría%20recibir%20más%20información%2C%20por%20favor." class="contact-links" target="_blank">Escríbenos por WhatsApp</a>';
+            document.querySelector(".contact-info p:nth-child(3)").innerHTML = '<strong>Dirección:</strong> Edificio La Placita, Tegucigalpa, Honduras';
+            document.querySelector(".contact-info p:nth-child(4)").innerHTML = '<strong>Horario:</strong> Lunes a sábado, 8:00 AM – 6:00 PM';
+            document.querySelector(".contact-info p:nth-child(5)").innerHTML = '<strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/HUDmgae4HPJv7r268" class="contact-links" target="_blank">Ver ubicación</a>';
+            document.querySelector(".map-header-row h2").textContent = "¿Dónde estamos?";
+            document.querySelector(".map-action-btn").textContent = "Cómo llegar";
         }
+
+        // TEXT US/ESCRÍBENOS BUTTON
+        var textBtn = document.createElement("a");
+        textBtn.className = "textus-btn";
+        textBtn.id = "textus-btn";
+        if(isEN) {
+            textBtn.textContent = "Text Us";
+            textBtn.href = "https://wa.me/50487647340?text=Hello!%20I'd%20like%20more%20information%20about%20Natur%20All%20Spa.";
+        } else {
+            textBtn.textContent = "Escríbenos";
+            textBtn.href = "https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All%20Spa.";
+        }
+        textBtn.target = "_blank";
+        document.body.appendChild(textBtn);
     });
     </script>
 </head>
@@ -152,74 +361,21 @@
     <header>
         <nav>
             <ul>
-                <li><a href="salon.html">Salón</a></li>
-                <li><a href="spa-caballeros.html">Spa para Caballeros</a></li>
-                <li><a href="promos.html">Promociones</a></li>
+                <!-- menú generado por JS -->
             </ul>
         </nav>
-        <h1>Natur All Massage</h1>
+        <h1>Natur All Masajes</h1>
         <p>Bienestar y relajación en Tegucigalpa · Reserva tu masaje hoy</p>
     </header>
     <div class="container">
         <h2>Servicios y Precios</h2>
         <table>
-            <tr>
-                <th>Tipo de Masaje</th>
-                <th>Duración</th>
-                <th>Precio</th>
-            </tr>
-            <tr>
-                <td>Masaje Relajante</td>
-                <td>60 min</td>
-                <td>L 700</td>
-            </tr>
-            <tr>
-                <td>Masaje Terapéutico</td>
-                <td>60 min</td>
-                <td>L 750</td>
-            </tr>
-            <tr>
-                <td>Masaje Deportivo</td>
-                <td>60 min</td>
-                <td>L 800</td>
-            </tr>
-            <tr>
-                <td>Masaje con Piedras Calientes</td>
-                <td>60 min</td>
-                <td>L 850</td>
-            </tr>
-            <tr>
-                <td>Reflexología Podal</td>
-                <td>45 min</td>
-                <td>L 600</td>
-            </tr>
-            <tr>
-                <td>Drenaje Linfático</td>
-                <td>60 min</td>
-                <td>L 900</td>
-            </tr>
-            <tr>
-                <td>Masaje Facial</td>
-                <td>45 min</td>
-                <td>L 650</td>
-            </tr>
-            <tr>
-                <td>Masaje en Pareja</td>
-                <td>60 min</td>
-                <td>L 1400</td>
-            </tr>
+            <!-- Generado por JS -->
         </table>
 
         <h2>Nuestros Masajes</h2>
         <ul class="massage-list">
-            <li><strong>Masaje Relajante:</strong> Ayuda a reducir el estrés y brinda una sensación de bienestar general.</li>
-            <li><strong>Masaje Terapéutico:</strong> Enfocado en aliviar tensiones musculares y dolores mediante técnicas especializadas.</li>
-            <li><strong>Masaje Deportivo:</strong> Ideal para deportistas o personas activas, mejora la flexibilidad y recuperación muscular.</li>
-            <li><strong>Masaje con Piedras Calientes:</strong> Combina técnicas manuales con piedras calientes para una relajación profunda.</li>
-            <li><strong>Reflexología Podal:</strong> Estimula puntos reflejos en los pies para promover la salud integral.</li>
-            <li><strong>Drenaje Linfático:</strong> Técnica suave que estimula el sistema linfático y ayuda a eliminar toxinas.</li>
-            <li><strong>Masaje Facial:</strong> Mejora la circulación y el tono de la piel, brindando una apariencia joven y relajada.</li>
-            <li><strong>Masaje en Pareja:</strong> Disfruta de una experiencia relajante acompañado en la misma sala.</li>
+            <!-- Generado por JS -->
         </ul>
 
         <div class="contact-section">
@@ -234,9 +390,11 @@
         </div>
 
         <div class="map">
-            <h2>¿Dónde estamos?</h2>
-            <!-- Google widget embed para la ubicación dada -->
-            <iframe 
+            <div class="map-header-row">
+                <h2>¿Dónde estamos?</h2>
+                <a class="map-action-btn" href="https://www.google.com/maps/dir/?api=1&destination=Natur+All,+Edificio+La+Placita,+Tegucigalpa,+Honduras" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+            <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.6830331984684!2d-87.18213742515128!3d14.083692389523456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fbd00394dc373%3A0x58f534e00a9fa34c!2sNatur%20All!5e1!3m2!1ses!2shn!4v1748022632238!5m2!1ses!2shn"
                 width="100%" height="260" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
