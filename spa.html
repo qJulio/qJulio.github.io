@@ -173,11 +173,11 @@
         // MENÚ: Home, Gentlemen's Spa, Nails Spa, Salon, Contact Us (sin SPA)
         var lang = navigator.language || navigator.userLanguage;
         var navOrder = [
-            {en:"Home", es:"Inicio", href:"https://naturallhn.com/"},
-            {en:"Gentlemen's Spa", es:"Spa para Caballeros", href:"https://naturallhn.com/spa-caballeros"},
-            {en:"Nails Spa", es:"Nails Spa", href:"https://naturallhn.com/nails-spa"},
-            {en:"Salon", es:"Salón", href:"https://naturallhn.com/salon"},
-            {en:"Contact Us", es:"Contáctanos", href:"https://naturallhn.com/contacto"}
+            {en:"Home", es:"Inicio", href:"index.html"},
+            {en:"Gentlemen's Spa", es:"Spa para Caballeros", href:"spa-caballeros.html"},
+            {en:"Nails Spa", es:"Nails Spa", href:"nails-spa.html"},
+            {en:"Salon", es:"Salón", href:"salon.html"},
+            {en:"Contact Us", es:"Contáctanos", href:"contacto.html"}
         ];
         var navUl = document.querySelector("nav ul");
         navUl.innerHTML = "";
@@ -300,9 +300,9 @@
         var table = document.querySelector("table");
         var tbody = "";
         massages.forEach(function(m){
-            tbody += "<tr><td>" + m.name + "</td><td>" + m.duration + "</td><td>" + m.price + "</td></tr>";
+            tbody += "<tr><td>" + m.name + "</td><td>" + m.duration + "</td></tr>";
         });
-        table.innerHTML = "<tr><th>"+(isEN?"Type of Massage":"Tipo de Masaje")+"</th><th>"+(isEN?"Duration":"Duración")+"</th><th>"+(isEN?"Price":"Precio")+"</th></tr>" + tbody;
+        table.innerHTML = "<tr><th>"+(isEN?"Type of Massage":"Tipo de Masaje")+"</th><th>"+(isEN?"Duration":"Duración")+"</th></tr>" + tbody;
 
         // Lista de masajes (descripciones)
         var massageList = document.querySelector(".massage-list");
@@ -399,5 +399,6 @@
                 width="100%" height="260" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
+    
 </body>
 </html>
