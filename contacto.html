@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11521444471"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11521444471');
+    </script>
+
+    <!-- Event snippet for WhatsApp Click conversion -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof url !== 'undefined') {
+          window.location = url;
+        }
+      };
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-11521444471/4U-mCOjGtaQcEPeU7fUq',
+          'event_callback': callback
+        });
+
+        return false;
+      }
+
+      if (typeof url !== 'undefined') {
+        window.location = url;
+      }
+
+      return false;
+    }
+    </script>
+
+    <title>Contacto - Natur All</title>
+    <link rel="shortcut icon" href="images/Natur All Logo.png" type="image/x-icon">
+    <meta name="description" content="Contáctanos para citas, dudas o más información sobre Natur All Spa en Tegucigalpa.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --main-brown: #8a6343;
+            --secondary-brown: #b48a68;
+            --light-beige: #f4e6d7;
+            --dark-brown: #6b472b;
+            --text-brown: #432d1a;
+        }
+
+        body {
+            background: var(--light-beige);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-brown);
+        }
+
+        header {
+            background: var(--main-brown);
+            padding: 32px 0 22px 0;
+            text-align: center;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 0 4px 24px #8a634340;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        header nav ul li {
+            margin: 0;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.17em;
+            transition: color .14s;
+            padding: 2px 10px;
+            border-radius: 4px;
+        }
+
+        header nav ul li a:hover {
+            color: var(--secondary-brown);
+            background: #fff5ee;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 2.5em;
+            margin: 20px 0 12px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+
+        header p {
+            color: #fff;
+            font-size: 1.16em;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .section-container {
+            max-width: 900px;
+            margin: 44px auto;
+            background: #fff;
+            border-radius: 22px;
+            padding: 38px 20px 38px 20px;
+            box-shadow: 0 4px 24px #8a634340;
+        }
+
+        h2 {
+            color: var(--main-brown);
+            border-bottom: 1.5px solid var(--secondary-brown);
+            padding-bottom: 4px;
+            margin-top: 0;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 32px;
+            font-family: 'Georgia', serif;
+        }
+
+        .contact-info {
+            margin: 0 auto 22px auto;
+            max-width: 560px;
+            background: var(--light-beige);
+            border-radius: 14px;
+            padding: 18px 25px 21px 25px;
+            box-shadow: 0 2px 14px #b48a6840;
+        }
+
+        .contact-info p {
+            margin: 12px 0;
+            font-size: 1.13em;
+            text-align: center;
+        }
+
+        .contact-links {
+            color: var(--main-brown);
+            text-decoration: underline;
+        }
+
+        .contact-links a {
+            color: var(--main-brown);
+            text-decoration: underline;
+        }
+
+        .contact-social {
+            margin-top: 14px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-social a {
+            display: inline-flex;
+            align-items: center;
+            color: var(--main-brown);
+            font-size: 1.23em;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .contact-social a:hover {
+            color: var(--secondary-brown);
+        }
+
+        .contact-social span {
+            font-size: 1.5em;
+            margin-right: 7px;
+        }
+
+        .map {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px #b48a6840;
+            background: #f4f4f4;
+        }
+
+        .map h2 {
+            color: var(--main-brown);
+            margin-top: 0;
+            font-size: 1.1em;
+            border: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .textus-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+            background: var(--main-brown);
+            color: #fff;
+            border: 1.5px solid var(--main-brown);
+            border-radius: 6px;
+            box-shadow: 0 2px 18px #b48a6840;
+            padding: 13px 28px;
+            font-family: 'Georgia', serif;
+            font-size: 1.13em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.14s, color 0.14s, box-shadow 0.12s;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+        }
+
+        .textus-btn:hover {
+            background: #fff;
+            color: var(--main-brown);
+            border: 1.5px solid var(--main-brown);
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px 0 10px 0;
+            color: var(--main-brown);
+            font-size: 1.04em;
+        }
+
+        @media (max-width: 700px) {
+            .section-container {
+                padding: 10px 2vw 18px 2vw;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .contact-info {
+                padding: 10px 5vw 15px 5vw;
+            }
+
+            .textus-btn {
+                padding: 8px 16px;
+                font-size: .95em;
+                bottom: 10px;
+                right: 7px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .contact-info {
+                padding: 8px 2vw;
+            }
+
+            .textus-btn {
+                font-size: .91em;
+            }
+        }
+    </style>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Menú dinámico traducción
+        var navList = document.querySelector('header nav ul');
+
+        var menu = {
+            es: [
+                { text: "Inicio", href: "https://naturallhn.com" },
+                { text: "Masajes", href: "https://naturallhn.com/spa" },
+                { text: "Spa para Caballeros", href: "https://naturallhn.com/spa-caballeros" },
+                { text: "Nails Spa", href: "https://naturallhn.com/nails-spa" },
+                { text: "Salón", href: "https://naturallhn.com/salon" },
+                { text: "Contáctanos", href: "https://naturallhn.com/contacto" }
+            ],
+            en: [
+                { text: "Home", href: "https://naturallhn.com" },
+                { text: "Massages", href: "https://naturallhn.com/spa" },
+                { text: "Gentlemen's Spa", href: "https://naturallhn.com/spa-caballeros" },
+                { text: "Nails Spa", href: "https://naturallhn.com/nails-spa" },
+                { text: "Salon", href: "https://naturallhn.com/salon" },
+                { text: "Contact Us", href: "https://naturallhn.com/contacto" }
+            ]
+        };
+
+        var lang = navigator.language || navigator.userLanguage || 'es';
+        var isEn = lang.startsWith('en');
+        var menuLang = isEn ? menu.en : menu.es;
+
+        navList.innerHTML = "";
+
+        menuLang.forEach(function(item) {
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+
+            a.href = item.href;
+            a.textContent = item.text;
+
+            li.appendChild(a);
+            navList.appendChild(li);
+        });
+
+        // Traducción textos principales
+        var h1 = document.querySelector('header h1');
+        var desc = document.querySelector('header p');
+        var h2 = document.querySelector('.section-container h2');
+        var footer = document.querySelector('footer p');
+        var textusBtn = document.getElementById('textus-btn');
+
+        if (isEn) {
+            document.documentElement.lang = "en";
+            document.title = "Contact - Natur All";
+
+            h1.textContent = "Contact Natur All";
+            desc.textContent = "We're here to help you. Contact us for appointments, questions, or more information!";
+            h2.textContent = "Contact & Booking";
+            footer.textContent = "© 2025 Natur All. All rights reserved.";
+
+            if (textusBtn) {
+                textusBtn.textContent = "Text Us";
+                textusBtn.href = "https://wa.me/50487647340?text=Hello!%20I%20would%20like%20more%20information%20about%20Natur%20All.";
+            }
+
+            var contact = document.querySelectorAll('.contact-info p');
+
+            contact[0].innerHTML =
+                '<strong>Phone:</strong> <a href="tel:+50487647340" class="contact-links">+504 8764-7340</a>';
+
+            contact[1].innerHTML =
+                '<strong>WhatsApp:</strong> <a href="https://wa.me/50487647340?text=Hello!%20I%20would%20like%20to%20schedule%20an%20appointment%20or%20get%20more%20info.%20Thank%20you!" class="contact-links" target="_blank" rel="noopener">Message us on WhatsApp</a>';
+
+            contact[2].innerHTML =
+                '<strong>Instagram:</strong> <a href="https://www.instagram.com/naturallspahn/" class="contact-links" target="_blank" rel="noopener">@naturallhn</a>';
+
+            contact[3].innerHTML =
+                '<strong>Address:</strong> Avenida Choluteca, Colonia Tepeyac, Tegucigalpa, Francisco Morazán';
+
+            contact[4].innerHTML =
+                '<strong>Hours:</strong> Monday to Saturday, 8:00 AM – 6:00 PM<br>' +
+                '<span>📅 <em>Sundays by appointment only</em></span>';
+
+            contact[5].innerHTML =
+                '<strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/HUDmgae4HPJv7r268" class="contact-links" target="_blank" rel="noopener">View location</a>';
+
+            document.querySelector('.map h2').textContent = "Our Location";
+
+            var socialWhatsapp = document.querySelector('.contact-social a[href*="wa.me"]');
+            if (socialWhatsapp) {
+                socialWhatsapp.innerHTML = '<span>💬</span>WhatsApp';
+                socialWhatsapp.href = "https://wa.me/50487647340?text=Hello!%20I%20would%20like%20more%20information%20about%20Natur%20All.";
+            }
+
+        } else {
+            document.documentElement.lang = "es";
+            document.title = "Contacto - Natur All";
+
+            h1.textContent = "Contacto Natur All";
+            desc.textContent = "Estamos aquí para ayudarte. Contáctanos para citas, dudas o más información.";
+            h2.textContent = "Contacto y Reservaciones";
+            footer.textContent = "© 2025 Natur All. Todos los derechos reservados.";
+
+            if (textusBtn) {
+                textusBtn.textContent = "Escríbenos";
+                textusBtn.href = "https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All.";
+            }
+
+            var contact = document.querySelectorAll('.contact-info p');
+
+            contact[0].innerHTML =
+                '<strong>Teléfono:</strong> <a href="tel:+50487647340" class="contact-links">+504 8764-7340</a>';
+
+            contact[1].innerHTML =
+                '<strong>WhatsApp:</strong> <a href="https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20agendar%20una%20cita%20o%20más%20información.%20Gracias!" class="contact-links" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>';
+
+            contact[2].innerHTML =
+                '<strong>Instagram:</strong> <a href="https://www.instagram.com/naturallspahn/" class="contact-links" target="_blank" rel="noopener">@naturallhn</a>';
+
+            contact[3].innerHTML =
+                '<strong>Dirección:</strong> Avenida Choluteca, Colonia Tepeyac, Tegucigalpa, Francisco Morazán';
+
+            contact[4].innerHTML =
+                '<strong>Horario:</strong> Lunes a sábado, 8:00 AM – 6:00 PM<br>' +
+                '<span>📅 <em>Domingos con cita previa</em></span>';
+
+            contact[5].innerHTML =
+                '<strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/HUDmgae4HPJv7r268" class="contact-links" target="_blank" rel="noopener">Ver ubicación</a>';
+
+            document.querySelector('.map h2').textContent = "¿Dónde estamos?";
+
+            var socialWhatsapp = document.querySelector('.contact-social a[href*="wa.me"]');
+            if (socialWhatsapp) {
+                socialWhatsapp.innerHTML = '<span>💬</span>WhatsApp';
+                socialWhatsapp.href = "https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All.";
+            }
+        }
+
+        // Track automático para todos los enlaces de WhatsApp
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                return gtag_report_conversion(link.href);
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <!-- Menú dinámico -->
+            </ul>
+        </nav>
+
+        <h1>Contacto Natur All</h1>
+        <p>Estamos aquí para ayudarte. Contáctanos para citas, dudas o más información.</p>
+    </header>
+
+    <div class="section-container">
+        <h2>Contacto y Reservaciones</h2>
+
+        <div class="contact-info">
+            <p>
+                <strong>Teléfono:</strong>
+                <a href="tel:+50487647340" class="contact-links">+504 8764-7340</a>
+            </p>
+
+            <p>
+                <strong>WhatsApp:</strong>
+                <a 
+                    href="https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20agendar%20una%20cita%20o%20más%20información.%20Gracias!"
+                    class="contact-links"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Escríbenos por WhatsApp
+                </a>
+            </p>
+
+            <p>
+                <strong>Instagram:</strong>
+                <a 
+                    href="https://www.instagram.com/naturallspahn/"
+                    class="contact-links"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    @naturallhn
+                </a>
+            </p>
+
+            <p>
+                <strong>Dirección:</strong>
+                Edificio La Placita, Tegucigalpa, Honduras
+            </p>
+
+            <p>
+                <strong>Horario:</strong>
+                Lunes a sábado, 8:00 AM – 6:00 PM
+            </p>
+
+            <p>
+                <strong>Google Maps:</strong>
+                <a 
+                    href="https://maps.app.goo.gl/HUDmgae4HPJv7r268"
+                    class="contact-links"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Ver ubicación
+                </a>
+            </p>
+
+            <div class="contact-social">
+                <a 
+                    href="https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All."
+                    target="_blank"
+                    rel="noopener"
+                    title="WhatsApp"
+                >
+                    <span>💬</span>WhatsApp
+                </a>
+
+                <a 
+                    href="https://www.instagram.com/naturallspahn/"
+                    target="_blank"
+                    rel="noopener"
+                    title="Instagram"
+                >
+                    <span>📷</span>Instagram
+                </a>
+
+                <a 
+                    href="mailto:contact@naturallhn.com"
+                    target="_blank"
+                    rel="noopener"
+                    title="Correo"
+                >
+                    <span>✉️</span>Email
+                </a>
+            </div>
+        </div>
+
+        <div class="map">
+            <h2>¿Dónde estamos?</h2>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.6830331984684!2d-87.18213742515128!3d14.083692389523456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fbd00394dc373%3A0x58f534e00a9fa34c!2sNatur%20All!5e1!3m2!1ses!2shn!4v1748022632238!5m2!1ses!2shn"
+                width="100%"
+                height="260"
+                frameborder="0"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+    <a 
+        href="https://wa.me/50487647340?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20Natur%20All."
+        class="textus-btn"
+        id="textus-btn"
+        target="_blank"
+        rel="noopener"
+    >
+        Escríbenos
+    </a>
+
+    <footer>
+        <p>&copy; 2025 Natur All. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
